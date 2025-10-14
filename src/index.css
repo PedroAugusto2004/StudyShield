@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import './styles/animations.css';
+@import './styles/hamster-loader.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+}
+
+@media (prefers-color-scheme: light) {
+  html, body {
+    background-color: #fff;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: #000;
+  }
+}
+
+/* Rounded corners for dropdowns and modals */
+.rounded-dropdown {
+  border-radius: 12px;
+}
+
+.rounded-modal {
+  border-radius: 16px;
+}
+
+.rounded-select {
+  border-radius: 8px;
+}
+
+/* StudyShield Design System - Glassmorphic Theme */
+@layer base {
+  :root {
+    /* Backgrounds - Deep blue gradients */
+    --background: 220 35% 8%;
+    --background-secondary: 225 30% 12%;
+    --foreground: 210 20% 92%;
+
+    /* Glass Cards - Semi-transparent with blur */
+    --card: 225 30% 15%;
+    --card-foreground: 210 20% 92%;
+    --card-glass: 225 30% 18%;
+    --card-border: 225 30% 25%;
+
+    /* Popover */
+    --popover: 225 30% 15%;
+    --popover-foreground: 210 20% 92%;
+
+    /* Primary - Blue to purple gradient */
+    --primary: 217 91% 60%;
+    --primary-dark: 224 76% 48%;
+    --primary-foreground: 210 20% 98%;
+    --primary-glow: 217 91% 70%;
+
+    /* Secondary - Muted glass */
+    --secondary: 225 20% 20%;
+    --secondary-foreground: 210 20% 85%;
+
+    /* Muted */
+    --muted: 225 20% 16%;
+    --muted-foreground: 215 15% 65%;
+
+    /* Accent - Bright blue */
+    --accent: 217 91% 60%;
+    --accent-foreground: 210 20% 98%;
+    --accent-hover: 217 91% 55%;
+
+    /* Status colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+    --success: 142 76% 36%;
+    --success-foreground: 210 20% 98%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 210 20% 98%;
+
+    /* Borders and inputs */
+    --border: 225 30% 25%;
+    --input: 225 30% 18%;
+    --input-border: 225 30% 30%;
+    --ring: 217 91% 60%;
+
+    /* Sidebar - Glassmorphic theme */
+    --sidebar-background: 225 30% 12%;
+    --sidebar-foreground: 210 20% 92%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 210 20% 98%;
+    --sidebar-accent: 225 20% 20%;
+    --sidebar-accent-foreground: 210 20% 85%;
+    --sidebar-border: 225 30% 25%;
+    --sidebar-ring: 217 91% 60%;
+
+    /* Border radius */
+    --radius: 0.75rem;
+    --radius-sm: 0.5rem;
+    --radius-lg: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-background to-background-secondary text-foreground font-sans;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    line-height: 1.6;
+  }
+
+  /* Improved text rendering */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+@layer components {
+  /* Glass Card Component */
+  .glass-card {
+    @apply bg-gradient-to-br from-card-glass/80 to-card/60 backdrop-blur-xl border border-card-border/50 rounded-xl;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:border-card-border/70;
+    @apply hover:bg-gradient-to-br hover:from-card-glass/90 hover:to-card/70;
+  }
+
+  /* Glass Button Variants */
+  .btn-glass {
+    @apply bg-gradient-to-r from-card-glass/60 to-card/40 backdrop-blur-md border border-card-border/50;
+    @apply text-foreground hover:from-card-glass/80 hover:to-card/60 hover:border-card-border/70;
+    @apply transition-all duration-200;
+  }
+
+  .btn-primary-glass {
+    @apply bg-gradient-to-r from-primary to-primary-dark text-primary-foreground;
+    @apply hover:from-primary-glow hover:to-primary transition-all duration-200;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+
+  .btn-primary-glass:hover {
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.5);
+  }
+}

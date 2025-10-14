@@ -1,0 +1,24 @@
+/* Custom styling for select dropdown options */
+select option {
+  border-radius: 8px !important;
+  padding: 8px 12px !important;
+  margin: 2px !important;
+}
+
+/* For webkit browsers */
+select::-webkit-scrollbar {
+  width: 8px;
+}
+
+select::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+select::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+select::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

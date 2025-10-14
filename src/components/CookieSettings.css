@@ -1,0 +1,32 @@
+/* Custom switch styling for CookieSettings */
+.custom-switch.dark-theme [data-state="checked"] {
+  background-color: white !important;
+}
+
+.custom-switch.dark-theme [data-state="unchecked"] {
+  background-color: #4b5563 !important;
+}
+
+.custom-switch.dark-theme [data-state="checked"] > span {
+  background-color: black !important;
+}
+
+.custom-switch.dark-theme [data-state="unchecked"] > span {
+  background-color: white !important;
+}
+
+.custom-switch.light-theme [data-state="checked"] {
+  background-color: black !important;
+}
+
+.custom-switch.light-theme [data-state="unchecked"] {
+  background-color: #d1d5db !important;
+}
+
+.custom-switch.light-theme [data-state="checked"] > span {
+  background-color: white !important;
+}
+
+.custom-switch.light-theme [data-state="unchecked"] > span {
+  background-color: black !important;
+}
