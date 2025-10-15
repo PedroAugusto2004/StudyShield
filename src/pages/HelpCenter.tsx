@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import studyShieldLogo from "@/assets/studyshield-logo.png";
-import { BookOpen, Download, MessageCircle, Shield, Zap, Chrome, Settings, CheckCircle, UserPlus, Cpu, MessageSquare, Sliders } from "lucide-react";
+import { BookOpen, Download, MessageCircle, Shield, Zap, Chrome, Settings, CheckCircle, UserPlus, Cpu, MessageSquare, Sliders, Github } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSelector from "@/components/LanguageSelector";
 
@@ -391,7 +391,7 @@ const HelpCenter = () => {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-black transition-colors font-medium"
                     >
-                      <Download className="w-5 h-5" />
+                      <Github className="w-5 h-5" />
                       {t('view.github.repository')}
                     </a>
                     <p className="text-sm text-gray-500 mt-3">
