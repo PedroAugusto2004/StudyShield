@@ -29,7 +29,7 @@ StudyShield is a revolutionary Progressive Web Application (PWA) that combines c
 
 ## 🚀 Live Demo
 
-**🔗 [Try StudyShield Now](https://www.studyshield.site/)**
+**🔗 [Try StudyShield Now](http://studyshield.site/)**
 
 Experience the full power of StudyShield with our live demo. No installation required!
 
@@ -139,7 +139,7 @@ StudyShield/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/studyshield.git
+   git clone https://github.com/PedroAugusto2004/studyshield.git
    cd studyshield
    ```
 
@@ -201,7 +201,7 @@ The built files will be in the `dist/` directory, ready for deployment.
 ## 🧪 Testing Instructions for Judges
 
 ### 1. **Live Demo Testing**
-- Visit: [https://www.studyshield.site/](https://www.studyshield.site/)
+- Visit: [http://studyshield.site/](http://studyshield.site/)
 - No installation required - test immediately in your browser
 
 ### 2. **Local Development Testing**
@@ -218,7 +218,7 @@ npm --version   # Should be 9.0.0+
 #### Quick Setup (5 minutes)
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/studyshield.git
+git clone https://github.com/PedroAugusto2004/studyshield.git
 cd studyshield
 
 # 2. Install dependencies
@@ -278,7 +278,7 @@ npm install -g lighthouse
 lighthouse http://localhost:8080 --output html --output-path ./lighthouse-report.html
 
 # Run audit on production
-lighthouse https://www.studyshield.site/ --output html --output-path ./lighthouse-prod-report.html
+lighthouse http://studyshield.site/ --output html --output-path ./lighthouse-prod-report.html
 ```
 
 #### Expected Performance Scores
@@ -506,7 +506,7 @@ We welcome contributions from the community! Here's how you can help:
 
 1. **Fork the Repository**
    ```bash
-   git fork https://github.com/your-username/studyshield.git
+   git fork https://github.com/PedroAugusto2004/studyshield.git
    ```
 
 2. **Create Feature Branch**
@@ -679,14 +679,6 @@ npm run dev:profile
 - **Documentation**: Check this README and inline code comments
 - **Issues**: Open an issue on GitHub for bugs or feature requests
 - **Discussions**: Use GitHub Discussions for questions and ideas
-- **Email**: Contact us at support@studyshield.ai
-
-### Community
-
-- **Discord**: Join our community server
-- **Twitter**: Follow us for updates
-- **LinkedIn**: Connect with the team
-- **YouTube**: Watch tutorials and demos
 
 ## 📄 License
 
@@ -734,40 +726,12 @@ SOFTWARE.
 - **Vercel Team** - For seamless deployment experience
 - **Open Source Community** - For all the amazing tools and libraries
 
-### Contributors
-- **Lead Developer**: [Your Name](https://github.com/your-username)
-- **UI/UX Design**: [Designer Name](https://github.com/designer)
-- **AI Integration**: [AI Developer](https://github.com/ai-dev)
-- **Backend**: [Backend Developer](https://github.com/backend-dev)
-
-## 📊 Statistics
-
-- **⭐ Stars**: 1,234
-- **🍴 Forks**: 567
-- **👥 Contributors**: 23
-- **🐛 Issues**: 45
-- **📝 Pull Requests**: 89
-- **📦 Downloads**: 12,345
-- **🌍 Languages**: 15
-
-## 🔗 Links
-
-- **🌐 Website**: [https://studyshield.ai](https://studyshield.ai)
-- **📱 Live Demo**: [https://studyshield.vercel.app](https://studyshield.vercel.app)
-- **📚 Documentation**: [https://docs.studyshield.ai](https://docs.studyshield.ai)
-- **🐦 Twitter**: [@StudyShieldAI](https://twitter.com/StudyShieldAI)
-- **💼 LinkedIn**: [StudyShield](https://linkedin.com/company/studyshield)
-- **📺 YouTube**: [StudyShield Channel](https://youtube.com/@studyshield)
-- **💬 Discord**: [StudyShield Community](https://discord.gg/studyshield)
-
 ---
 
 <div align="center">
 
 **Made with ❤️ by the StudyShield Team**
 
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/your-username/studyshield)
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/StudyShieldAI)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/company/studyshield)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/PedroAugusto2004/studyshield)
 
 </div>
