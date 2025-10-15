@@ -193,6 +193,10 @@ const translations: Record<Language, Record<string, string>> = {
     'still.need.help': 'Still Need Help?',
     'still.need.help.description': "Our support team is here to help you get the most out of StudyShield. Fill out our contact form and we'll get back to you as soon as possible.",
     'contact.support': 'Contact Support',
+    'alternative.download.helper': 'Alternative: Use Our Download Helper',
+    'alternative.download.helper.description': "If the console method doesn't work, use our simple HTML tool to trigger the Gemini Nano download automatically.",
+    'view.github.repository': 'View GitHub Repository',
+    'repository.instructions': 'This repository contains an HTML file that automatically triggers the model download. Follow the instructions in the README.',
     
     // Terms of Service
     'terms.of.service.title': 'Terms of Service',
@@ -610,6 +614,10 @@ const translations: Record<Language, Record<string, string>> = {
     'still.need.help': '¿Aún Necesitas Ayuda?',
     'still.need.help.description': 'Nuestro equipo de soporte está aquí para ayudarte a aprovechar al máximo StudyShield. Completa nuestro formulario de contacto y te responderemos lo antes posible.',
     'contact.support': 'Contactar Soporte',
+    'alternative.download.helper': 'Alternativa: Usa Nuestro Asistente de Descarga',
+    'alternative.download.helper.description': 'Si el método de consola no funciona, usa nuestra simple herramienta HTML para activar la descarga de Gemini Nano automáticamente.',
+    'view.github.repository': 'Ver Repositorio de GitHub',
+    'repository.instructions': 'Este repositorio contiene un archivo HTML que activa automáticamente la descarga del modelo. Sigue las instrucciones en el README.',
     
     // Terms of Service
     'terms.of.service.title': 'Términos de Servicio',
@@ -1252,6 +1260,10 @@ const translations: Record<Language, Record<string, string>> = {
     'still.need.help': 'Besoin d\'Aide?',
     'still.need.help.description': 'Notre équipe de support est là pour vous aider à tirer le meilleur parti de StudyShield. Remplissez notre formulaire de contact et nous vous répondrons dès que possible.',
     'contact.support': 'Contacter le Support',
+    'alternative.download.helper': 'Alternative: Utilisez Notre Assistant de Téléchargement',
+    'alternative.download.helper.description': 'Si la méthode de console ne fonctionne pas, utilisez notre simple outil HTML pour déclencher le téléchargement de Gemini Nano automatiquement.',
+    'view.github.repository': 'Voir le Référentiel GitHub',
+    'repository.instructions': 'Ce référentiel contient un fichier HTML qui déclenche automatiquement le téléchargement du modèle. Suivez les instructions dans le README.',
     
     // Terms of Service
     'terms.of.service.title': 'Conditions de Service',
@@ -1734,6 +1746,10 @@ const translations: Record<Language, Record<string, string>> = {
     'still.need.help': 'Brauchen Sie noch Hilfe?',
     'still.need.help.description': 'Unser Support-Team ist hier, um Ihnen zu helfen, das Beste aus StudyShield herauszuholen. Füllen Sie unser Kontaktformular aus und wir melden uns so schnell wie möglich bei Ihnen.',
     'contact.support': 'Support kontaktieren',
+    'alternative.download.helper': 'Alternative: Verwenden Sie Unseren Download-Helfer',
+    'alternative.download.helper.description': 'Wenn die Konsolenmethode nicht funktioniert, verwenden Sie unser einfaches HTML-Tool, um den Gemini Nano-Download automatisch auszulösen.',
+    'view.github.repository': 'GitHub-Repository Anzeigen',
+    'repository.instructions': 'Dieses Repository enthält eine HTML-Datei, die den Modell-Download automatisch auslöst. Folgen Sie den Anweisungen in der README.',
     
     // Terms of Service
     'terms.of.service.title': 'Nutzungsbedingungen',
@@ -2144,6 +2160,10 @@ const translations: Record<Language, Record<string, string>> = {
     'still.need.help': 'Ainda Precisa de Ajuda?',
     'still.need.help.description': 'Nossa equipe de suporte está aqui para ajudá-lo a aproveitar ao máximo o StudyShield. Preencha nosso formulário de contato e entraremos em contato o mais rápido possível.',
     'contact.support': 'Entrar em Contato com o Suporte',
+    'alternative.download.helper': 'Alternativa: Use Nosso Assistente de Download',
+    'alternative.download.helper.description': 'Se o método do console não funcionar, use nossa ferramenta HTML simples para acionar o download do Gemini Nano automaticamente.',
+    'view.github.repository': 'Ver Repositório do GitHub',
+    'repository.instructions': 'Este repositório contém um arquivo HTML que aciona automaticamente o download do modelo. Siga as instruções no README.',
     
     // Terms of Service
     'terms.of.service.title': 'Termos de Serviço',
@@ -2553,6 +2573,10 @@ const translations: Record<Language, Record<string, string>> = {
     'still.need.help': '仍需要帮助？',
     'still.need.help.description': '我们的支持团队在这里帮助您充分利用StudyShield。填写我们的联系表单，我们会尽快回复您。',
     'contact.support': '联系支持',
+    'alternative.download.helper': '替代方案：使用我们的下载助手',
+    'alternative.download.helper.description': '如果控制台方法不起作用，请使用我们的简单HTML工具自动触发Gemini Nano下载。',
+    'view.github.repository': '查看GitHub仓库',
+    'repository.instructions': '此仓库包含一个HTML文件，可自动触发模型下载。请遵循README中的说明。',
     
     // Terms of Service
     'terms.of.service.title': '服务条款',
@@ -2962,6 +2986,10 @@ const translations: Record<Language, Record<string, string>> = {
     'still.need.help': 'まだヘルプが必要ですか？',
     'still.need.help.description': 'サポートチームがStudyShieldを最大限に活用できるようお手伝いします。お問い合わせフォームにご記入いただければ、できるだけ早くご連絡いたします。',
     'contact.support': 'サポートに連絡',
+    'alternative.download.helper': '代替手段：ダウンロードヘルパーを使用',
+    'alternative.download.helper.description': 'コンソール方法が機能しない場合は、シンプルなHTMLツールを使用してGemini Nanoダウンロードを自動的にトリガーします。',
+    'view.github.repository': 'GitHubリポジトリを表示',
+    'repository.instructions': 'このリポジトリには、モデルダウンロードを自動的にトリガーするHTMLファイルが含まれています。READMEの指示に従ってください。',
     
     // Terms of Service
     'terms.of.service.title': '利用規約',
@@ -3047,6 +3075,10 @@ const translations: Record<Language, Record<string, string>> = {
   ko: {
     // Landing Page
     'get.started': '시작하기',
+    'alternative.download.helper': '대안: 다운로드 도우미 사용',
+    'alternative.download.helper.description': '콘솔 방법이 작동하지 않으면 간단한 HTML 도구를 사용하여 Gemini Nano 다운로드를 자동으로 트리거하세요.',
+    'view.github.repository': 'GitHub 리포지토리 보기',
+    'repository.instructions': '이 리포지토리에는 모델 다운로드를 자동으로 트리거하는 HTML 파일이 포함되어 있습니다. README의 지침을 따르세요.',
     'learn.smarter': '더 스마트하게 배우고, 집중하며, 안전하게 공부하세요',
     'hero.description': 'StudyShield는 당신의 집중력을 보호하고, 유해한 콘텐츠를 필터링하며, 자신감을 가지고 공부할 수 있도록 도와주는 올인원 플랫폼입니다. 더 나은 습관을 만들고, 주의를 산만하게 하는 것들을 차단하며, 언제 어디서나 궁극의 안전한 학습 환경을 만들어보세요.',
     'start.studying.safely': '안전하게 공부 시작하기',

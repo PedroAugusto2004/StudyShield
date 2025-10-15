@@ -379,6 +379,39 @@ const HelpCenter = () => {
                     5
                   </div>
                   <div className="flex-1">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      {t('alternative.download.helper')}
+                    </h3>
+                    <p className="text-gray-600 mb-3">
+                      {t('alternative.download.helper.description')}
+                    </p>
+                    <a 
+                      href="https://github.com/PedroAugusto2004/Gemini-nano-enable-test" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-black transition-colors font-medium"
+                    >
+                      <Download className="w-5 h-5" />
+                      {t('view.github.repository')}
+                    </a>
+                    <p className="text-sm text-gray-500 mt-3">
+                      {t('repository.instructions')}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.0 }}
+                className="bg-white p-6 rounded-2xl border-2 border-gray-200 shadow-lg"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                    6
+                  </div>
+                  <div className="flex-1">
                     <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
                       <CheckCircle className="w-6 h-6 text-green-600" />
                       {t('verify.installation')}
