@@ -679,8 +679,15 @@ const Chat = () => {
     const handleOnline = () => updateAiStatus();
     const handleOffline = () => updateAiStatus();
     
+    // Listen for personalization updates
+    const handlePersonalizationUpdate = async () => {
+      const { geminiNanoService } = await import('@/services/geminiNanoService');
+      await geminiNanoService.updatePersonalization();
+    };
+    
     window.addEventListener('online', handleOnline);
     window.addEventListener('offline', handleOffline);
+    window.addEventListener('personalizationUpdated', handlePersonalizationUpdate);
     
     // Periodic status check
     const checkInterval = setInterval(updateAiStatus, 30000);
@@ -715,6 +722,7 @@ const Chat = () => {
       clearInterval(checkInterval);
       window.removeEventListener('online', handleOnline);
       window.removeEventListener('offline', handleOffline);
+      window.removeEventListener('personalizationUpdated', handlePersonalizationUpdate);
     };
   }, []);
 

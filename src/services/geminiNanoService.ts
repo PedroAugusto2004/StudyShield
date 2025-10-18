@@ -45,9 +45,27 @@ export class GeminiNanoService {
         return false;
       }
 
+      // Get user personalization from localStorage
+      const userName = localStorage.getItem('userName');
+      const userGoals = localStorage.getItem('userGoals');
+      
+      // Build personalized system prompt
+      let systemPrompt = 'StudyShield AI: Clear, concise educational help.';
+      
+      if (userName || userGoals) {
+        systemPrompt = 'You are StudyShield AI, an educational assistant.';
+        if (userName) {
+          systemPrompt += ` The user's name is ${userName}.`;
+        }
+        if (userGoals) {
+          systemPrompt += ` Their learning goals: ${userGoals}.`;
+        }
+        systemPrompt += ' Provide personalized, clear, and concise educational help.';
+      }
+
       // Create session with optimized parameters
       this.session = await LanguageModel.create({
-        systemPrompt: `StudyShield AI: Clear, concise educational help.`,
+        systemPrompt,
         temperature: 0.7,
         topK: 20
       });
@@ -57,7 +75,7 @@ export class GeminiNanoService {
         return false;
       }
 
-      console.log('Gemini Nano: Successfully initialized');
+      console.log('Gemini Nano: Successfully initialized with personalization');
       return true;
     } catch (error) {
       console.error('Failed to initialize Gemini Nano:', error);
@@ -225,6 +243,7 @@ export class GeminiNanoService {
 
   async resetSession(): Promise<boolean> {
     this.destroy();
+    this.clearCache();
     return this.initializeNano();
   }
 
@@ -233,6 +252,11 @@ export class GeminiNanoService {
       return null;
     }
     return await this.session.clone();
+  }
+
+  async updatePersonalization(): Promise<boolean> {
+    // Reinitialize session with updated personalization
+    return this.resetSession();
   }
 }
 

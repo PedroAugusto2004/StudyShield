@@ -134,6 +134,9 @@ const SettingsModal = ({ isOpen, onClose, initialTab = 'general' }: SettingsModa
         description: t('name.updated.description'),
       });
       window.dispatchEvent(new CustomEvent('nameUpdated', { detail: { name: sanitizedName } }));
+      
+      // Update Gemini Nano personalization
+      window.dispatchEvent(new CustomEvent('personalizationUpdated'));
     } catch (error) {
       toast({ title: t('error'), description: t('name.update.failed'), variant: "destructive" });
     }
@@ -157,6 +160,9 @@ const SettingsModal = ({ isOpen, onClose, initialTab = 'general' }: SettingsModa
       if (user?.id) {
         await userDataService.updateUserProfile(user.id, { goals: sanitizedGoals });
       }
+      
+      // Update Gemini Nano personalization
+      window.dispatchEvent(new CustomEvent('personalizationUpdated'));
       
       toast({
         title: t('personalization.added'),
