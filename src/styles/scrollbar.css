@@ -27,11 +27,15 @@
 
 /* Dark mode scrollbar */
 .dark-scrollbar::-webkit-scrollbar-track {
-  background: #000000;
+  background: transparent;
 }
 
 .dark-scrollbar::-webkit-scrollbar-thumb {
   background: #374151;
+}
+
+.dark-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
 }
 
 /* Light mode scrollbar track */
