@@ -331,9 +331,12 @@ const ConversationSidebar = ({
           <Button
             variant="ghost"
             size="sm"
-            className={`${isDark ? 'hover:bg-gray-800 text-gray-400' : 'hover:bg-gray-200 text-gray-600'} p-2 md:hidden`}
+            className={`${isDark ? 'hover:bg-gray-800 text-gray-400 hover:text-white' : 'hover:bg-gray-200 text-gray-600 hover:text-black'} p-2.5 md:hidden rounded-lg transition-all duration-200 active:scale-95`}
           >
-            <Menu className="w-4 h-4" />
+            <div className="flex flex-col gap-1.5 w-5">
+              <div className="h-0.5 w-full rounded-full bg-current" />
+              <div className="h-0.5 w-3/4 rounded-full bg-current" />
+            </div>
           </Button>
           <div className="flex-1"></div>
         </div>

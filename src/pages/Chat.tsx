@@ -1212,9 +1212,12 @@ const Chat = () => {
               onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
               variant="ghost"
               size="sm"
-              className={`md:hidden p-2 ${isDark ? 'hover:bg-gray-800 text-gray-400 hover:text-white' : 'hover:bg-gray-200 text-gray-600 hover:text-black'}`}
+              className={`md:hidden p-2.5 rounded-lg transition-all duration-200 active:scale-95 ${isDark ? 'hover:bg-gray-800 text-gray-400 hover:text-white' : 'hover:bg-gray-200 text-gray-600 hover:text-black'}`}
             >
-              <Menu className="w-5 h-5" />
+              <div className="flex flex-col gap-1.5 w-5">
+                <div className="h-0.5 w-full rounded-full bg-current" />
+                <div className="h-0.5 w-3/4 rounded-full bg-current" />
+              </div>
             </Button>
             <img 
               src={isDark ? "/StudyShield-white.png" : "/studyshield-logo.png"} 
