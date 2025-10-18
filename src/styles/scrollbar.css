@@ -36,7 +36,7 @@
 
 /* Light mode scrollbar track */
 .light-scrollbar::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: transparent;
 }
 
 .light-scrollbar::-webkit-scrollbar-thumb {
