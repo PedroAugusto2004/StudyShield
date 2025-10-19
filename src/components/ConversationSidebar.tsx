@@ -3,6 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useLanguage } from "@/contexts/LanguageContext";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { 
   Search, 
   MessageSquare, 
@@ -16,7 +22,9 @@ import {
   X,
   Menu,
   PenTool,
-  PencilLine
+  PencilLine,
+  MoreVertical,
+  Share2
 } from "lucide-react";
 
 export interface Conversation {
@@ -35,6 +43,7 @@ interface ConversationSidebarProps {
   onSelectConversation: (conversation: Conversation) => void;
   onNewConversation: () => void;
   onDeleteConversation: (id: string) => void;
+  onShareConversation?: (id: string) => void;
 }
 
 const ConversationSidebar = ({
@@ -44,7 +53,8 @@ const ConversationSidebar = ({
   currentConversationId,
   onSelectConversation,
   onNewConversation,
-  onDeleteConversation
+  onDeleteConversation,
+  onShareConversation
 }: ConversationSidebarProps) => {
   const { actualTheme } = useTheme();
   const { t } = useLanguage();
@@ -255,30 +265,52 @@ const ConversationSidebar = ({
                         )}
                       </div>
                       {editingId !== conversation.id && (
-                        <div className="flex opacity-100 md:opacity-0 md:group-hover:opacity-100">
-                          <Button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              handleEditStart(conversation);
-                            }}
-                            variant="ghost"
-                            size="sm"
-                            className="p-1 h-6 w-6 text-gray-400 hover:text-blue-400 hover:bg-blue-900/20"
-                          >
-                            <Edit2 className="w-3 h-3" />
-                          </Button>
-                          <Button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setDeleteConfirmId(conversation.id);
-                            }}
-                            variant="ghost"
-                            size="sm"
-                            className="p-1 h-6 w-6 text-gray-400 hover:text-red-500 hover:bg-red-900/20"
-                          >
-                            <Trash2 className="w-3 h-3" />
-                          </Button>
-                        </div>
+                        <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
+                            <Button
+                              onClick={(e) => e.stopPropagation()}
+                              variant="ghost"
+                              size="sm"
+                              className={`p-1 h-6 w-6 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity ${
+                                isDark ? 'text-gray-400 hover:text-white hover:bg-gray-700' : 'text-gray-600 hover:text-black hover:bg-gray-200'
+                              }`}
+                            >
+                              <MoreVertical className="w-4 h-4" />
+                            </Button>
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent align="end" className={isDark ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}>
+                            <DropdownMenuItem
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                onShareConversation?.(conversation.id);
+                              }}
+                              className={`cursor-pointer ${isDark ? 'text-gray-300 hover:bg-gray-700' : 'text-gray-700 hover:bg-gray-100'}`}
+                            >
+                              <Share2 className="w-4 h-4 mr-2" />
+                              Share
+                            </DropdownMenuItem>
+                            <DropdownMenuItem
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleEditStart(conversation);
+                              }}
+                              className={`cursor-pointer ${isDark ? 'text-gray-300 hover:bg-gray-700' : 'text-gray-700 hover:bg-gray-100'}`}
+                            >
+                              <PencilLine className="w-4 h-4 mr-2" />
+                              Rename
+                            </DropdownMenuItem>
+                            <DropdownMenuItem
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setDeleteConfirmId(conversation.id);
+                              }}
+                              className={`cursor-pointer ${isDark ? 'text-red-400 hover:bg-red-900/20' : 'text-red-600 hover:bg-red-50'}`}
+                            >
+                              <Trash2 className="w-4 h-4 mr-2" />
+                              {t('delete')}
+                            </DropdownMenuItem>
+                          </DropdownMenuContent>
+                        </DropdownMenu>
                       )}
                     </div>
                   </div>

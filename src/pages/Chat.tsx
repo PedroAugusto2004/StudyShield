@@ -190,6 +190,7 @@ const Chat = () => {
   const [showOfflineHint, setShowOfflineHint] = useState(false);
   const [showShareModal, setShowShareModal] = useState(false);
   const [shareUrl, setShareUrl] = useState('');
+  const [sharingConversationId, setSharingConversationId] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -1138,6 +1139,16 @@ const Chat = () => {
     handleNewConversation();
   };
 
+  const handleShareConversation = (id: string) => {
+    const conversation = conversations.find(c => c.id === id);
+    if (conversation) {
+      const url = `${window.location.origin}/chat/${id}`;
+      setShareUrl(url);
+      setSharingConversationId(id);
+      setShowShareModal(true);
+    }
+  };
+
   const handleLogout = async () => {
     const { supabase } = await import('@/integrations/supabase/client');
     await supabase.auth.signOut();
@@ -1193,26 +1204,7 @@ const Chat = () => {
     resetStreamingText();
   };
 
-  const handleShareConversation = async () => {
-    if (!currentConversationId || !user) return;
-    
-    try {
-      const { supabase } = await import('@/integrations/supabase/client');
-      const shareId = crypto.randomUUID();
-      
-      const { error } = await supabase
-        .from('conversations')
-        .update({ is_shared: true, share_id: shareId })
-        .eq('id', currentConversationId);
 
-      if (error) throw error;
-      const url = `${window.location.origin}/shared/${shareId}`;
-      setShareUrl(url);
-      setShowShareModal(true);
-    } catch (error) {
-      console.error('Error sharing conversation:', error);
-    }
-  };
 
   const isDark = actualTheme === 'dark';
 
@@ -1232,6 +1224,7 @@ const Chat = () => {
         onSelectConversation={handleSelectConversation}
         onNewConversation={handleNewConversation}
         onDeleteConversation={handleDeleteConversation}
+        onShareConversation={handleShareConversation}
       />
       
       {/* Main Chat Area */}
@@ -1324,7 +1317,7 @@ const Chat = () => {
         {isChatMode && currentConversationId && (
           <div className="fixed top-20 right-4 sm:right-6 z-10">
             <Button
-              onClick={handleShareConversation}
+              onClick={() => currentConversationId && handleShareConversation(currentConversationId)}
               variant="ghost"
               size="sm"
               className={`flex items-center gap-2 rounded-full p-2.5 sm:px-3 sm:py-2 backdrop-blur-md ${isDark ? 'bg-black/30 text-white hover:bg-gray-800/50' : 'bg-white/30 text-black hover:bg-gray-100/50 hover:text-black'} transition-all duration-200`}
@@ -1804,9 +1797,9 @@ const Chat = () => {
         {/* Share Modal */}
         <ShareModal
           isOpen={showShareModal}
-          onClose={() => setShowShareModal(false)}
-          conversationTitle={getCurrentConversation()?.title || 'Conversation'}
-          firstMessage={messages.find(m => m.type === 'user') || null}
+          onClose={() => { setShowShareModal(false); setSharingConversationId(null); }}
+          conversationTitle={conversations.find(c => c.id === sharingConversationId)?.title || 'Conversation'}
+          firstMessage={conversations.find(c => c.id === sharingConversationId)?.messages.find(m => m.type === 'user') || null}
           shareUrl={shareUrl}
         />
       </div>
