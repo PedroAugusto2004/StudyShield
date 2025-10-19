@@ -24,6 +24,8 @@ export type Database = {
           chat_history: Json
           created_at: string
           updated_at: string
+          is_shared: boolean | null
+          share_id: string | null
         }
         Insert: {
           id?: string
@@ -34,6 +36,8 @@ export type Database = {
           chat_history?: Json
           created_at?: string
           updated_at?: string
+          is_shared?: boolean | null
+          share_id?: string | null
         }
         Update: {
           id?: string
@@ -44,6 +48,8 @@ export type Database = {
           chat_history?: Json
           created_at?: string
           updated_at?: string
+          is_shared?: boolean | null
+          share_id?: string | null
         }
       }
       user_profiles: {

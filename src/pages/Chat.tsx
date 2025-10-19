@@ -40,12 +40,14 @@ import {
   Shield,
   Globe,
   Cpu,
-  HelpCircle
+  HelpCircle,
+  Upload
 } from "lucide-react";
 import { aiService, type AIMode } from "@/services/aiService";
 import { geminiService, type ChatMessage as GeminiChatMessage } from "@/services/geminiService";
 import { AIModeSelector } from "@/components/AIModeSelector";
 import PWAInstallPopup from "@/components/PWAInstallPopup";
+import { ShareModal } from "@/components/ShareModal";
 import "@/styles/pwa-popup.css";
 
 // Copy Button Component with Animation
@@ -186,6 +188,8 @@ const Chat = () => {
   const [activeTab, setActiveTab] = useState('general');
   const [isDragOver, setIsDragOver] = useState(false);
   const [showOfflineHint, setShowOfflineHint] = useState(false);
+  const [showShareModal, setShowShareModal] = useState(false);
+  const [shareUrl, setShareUrl] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -1189,6 +1193,27 @@ const Chat = () => {
     resetStreamingText();
   };
 
+  const handleShareConversation = async () => {
+    if (!currentConversationId || !user) return;
+    
+    try {
+      const { supabase } = await import('@/integrations/supabase/client');
+      const shareId = crypto.randomUUID();
+      
+      const { error } = await supabase
+        .from('conversations')
+        .update({ is_shared: true, share_id: shareId })
+        .eq('id', currentConversationId);
+
+      if (error) throw error;
+      const url = `${window.location.origin}/shared/${shareId}`;
+      setShareUrl(url);
+      setShowShareModal(true);
+    } catch (error) {
+      console.error('Error sharing conversation:', error);
+    }
+  };
+
   const isDark = actualTheme === 'dark';
 
   if (conversationsLoading) {
@@ -1212,8 +1237,8 @@ const Chat = () => {
       {/* Main Chat Area */}
       <div className={`${isDark ? 'bg-black' : 'bg-white'} flex flex-col flex-1 min-w-0`}>
       {/* Header */}
-      <header className={`${isDark ? 'bg-black border-gray-700' : 'bg-white border-gray-200'} border-b px-4 sm:px-6 py-4`}>
-        <div className="flex items-center justify-between max-w-7xl mx-auto">
+      <header className={`${isDark ? 'bg-black' : 'bg-white'} px-4 sm:px-6 py-4`}>
+        <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             {/* Mobile hamburger menu */}
             <Button
@@ -1236,7 +1261,7 @@ const Chat = () => {
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="relative h-10 w-10 rounded-full">
+              <Button variant="ghost" className="relative h-10 w-10 rounded-full mr-2 sm:mr-4">
                 <Avatar className="h-10 w-10">
                   {localStorage.getItem('userPhoto') ? (
                     <img 
@@ -1292,9 +1317,24 @@ const Chat = () => {
       {/* Messages */}
       <div 
         ref={messagesContainerRef}
-        className={`flex-1 p-4 sm:p-6 ${isDark ? 'bg-black dark-scrollbar' : 'bg-gray-50 light-scrollbar'} overflow-y-auto`} 
+        className={`flex-1 p-4 sm:p-6 ${isDark ? 'bg-black dark-scrollbar' : 'bg-gray-50 light-scrollbar'} overflow-y-auto relative`} 
         style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
       >
+        {/* Share Button - Fixed position, only show when in chat mode */}
+        {isChatMode && currentConversationId && (
+          <div className="fixed top-20 right-4 sm:right-6 z-10">
+            <Button
+              onClick={handleShareConversation}
+              variant="ghost"
+              size="sm"
+              className={`flex items-center gap-2 rounded-full p-2.5 sm:px-3 sm:py-2 backdrop-blur-md ${isDark ? 'bg-black/30 text-white hover:bg-gray-800/50' : 'bg-white/30 text-black hover:bg-gray-100/50 hover:text-black'} transition-all duration-200`}
+            >
+              <Upload className="w-4 h-4" />
+              <span className="text-sm font-medium hidden sm:inline">Share</span>
+            </Button>
+          </div>
+        )}
+        
         <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6">
           {messages.filter(msg => isChatMode ? msg.type !== 'greeting' : true).map((message) => (
             <div
@@ -1760,6 +1800,15 @@ const Chat = () => {
             </div>
           </div>
         )}
+        
+        {/* Share Modal */}
+        <ShareModal
+          isOpen={showShareModal}
+          onClose={() => setShowShareModal(false)}
+          conversationTitle={getCurrentConversation()?.title || 'Conversation'}
+          firstMessage={messages.find(m => m.type === 'user') || null}
+          shareUrl={shareUrl}
+        />
       </div>
     </div>
   );
