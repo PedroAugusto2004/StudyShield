@@ -20,7 +20,8 @@ const OAuthCallback = () => {
             navigate('/auth?error=oauth_failed');
             return;
           }
-          // Success - user will be set by AuthContext
+          // Success - redirect to chat
+          navigate('/chat');
         } catch (error) {
           console.error('OAuth callback error:', error);
           navigate('/auth?error=oauth_failed');
@@ -33,12 +34,6 @@ const OAuthCallback = () => {
 
     handleCallback();
   }, [searchParams, navigate]);
-
-  useEffect(() => {
-    if (user) {
-      navigate('/chat');
-    }
-  }, [user, navigate]);
 
   return (
     <div className="min-h-screen bg-white flex items-center justify-center">

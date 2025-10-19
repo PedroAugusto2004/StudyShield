@@ -263,6 +263,20 @@ const Auth = () => {
                 )}
               </div>
 
+              {!isForgotPassword && (
+                <p className="text-xs text-gray-600 text-center">
+                  By signing in to StudyShield, you agree with the{' '}
+                  <a 
+                    href="/terms" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline"
+                  >
+                    Terms and Conditions
+                  </a>
+                </p>
+              )}
+
               <Button
                 type="submit"
                 disabled={loading}
