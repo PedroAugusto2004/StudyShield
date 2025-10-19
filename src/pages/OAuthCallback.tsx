@@ -1,18 +1,19 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/contexts/AuthContext';
 
 const OAuthCallback = () => {
   const navigate = useNavigate();
-  const { user } = useAuth();
+  const { user, loading } = useAuth();
   const [searchParams] = useSearchParams();
+  const [exchanged, setExchanged] = useState(false);
 
   useEffect(() => {
     const handleCallback = async () => {
       const code = searchParams.get('code');
       
-      if (code) {
+      if (code && !exchanged) {
         try {
           const { error } = await supabase.auth.exchangeCodeForSession(code);
           if (error) {
@@ -20,20 +21,24 @@ const OAuthCallback = () => {
             navigate('/auth?error=oauth_failed');
             return;
           }
-          // Success - redirect to chat
-          navigate('/chat');
+          setExchanged(true);
         } catch (error) {
           console.error('OAuth callback error:', error);
           navigate('/auth?error=oauth_failed');
         }
-      } else {
-        // No code parameter, redirect to auth
+      } else if (!code) {
         navigate('/auth');
       }
     };
 
     handleCallback();
-  }, [searchParams, navigate]);
+  }, [searchParams, navigate, exchanged]);
+
+  useEffect(() => {
+    if (exchanged && !loading && user) {
+      navigate('/chat', { replace: true });
+    }
+  }, [exchanged, loading, user, navigate]);
 
   return (
     <div className="min-h-screen bg-white flex items-center justify-center">
