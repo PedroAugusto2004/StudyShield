@@ -38,15 +38,20 @@ const useChartAnimation = (inView: boolean) => {
 const Landing = () => {
   const navigate = useNavigate();
   const { t } = useLanguage();
-  const { user } = useAuth();
+  const { user, loading } = useAuth();
   const { canUseAnalytics, enableAnalytics } = useCookieConsent();
   
   // Redirect authenticated users to chat
   useEffect(() => {
     if (user) {
-      navigate('/chat');
+      navigate('/chat', { replace: true });
     }
   }, [user, navigate]);
+  
+  // Show nothing while checking auth or if user exists
+  if (loading || user) {
+    return null;
+  }
   
   // Enable analytics if cookies are accepted
   useEffect(() => {
