@@ -1090,6 +1090,8 @@ const Chat = () => {
     if (conversation.title !== conversations.find(c => c.id === conversation.id)?.title) {
       updateConversationTitle(conversation.id, conversation.title);
     }
+    // Update timestamp to move conversation to top
+    updateConversation(conversation.id, { timestamp: new Date() });
     setCurrentConversationId(conversation.id);
     setSidebarCollapsed(true);
   };
@@ -1315,7 +1317,7 @@ const Chat = () => {
       >
         {/* Share Button - Fixed position, only show when in chat mode */}
         {isChatMode && currentConversationId && (
-          <div className="fixed top-20 right-4 sm:right-6 z-10">
+          <div className="fixed top-20 right-4 sm:right-6 z-10 hidden sm:block">
             <Button
               onClick={() => currentConversationId && handleShareConversation(currentConversationId)}
               variant="ghost"

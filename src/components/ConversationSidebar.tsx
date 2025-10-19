@@ -278,7 +278,7 @@ const ConversationSidebar = ({
                               <MoreVertical className="w-4 h-4" />
                             </Button>
                           </DropdownMenuTrigger>
-                          <DropdownMenuContent align="end" className={isDark ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}>
+                          <DropdownMenuContent align="end" className={isDark ? 'border-gray-700' : 'bg-white border-gray-200'} style={isDark ? { backgroundColor: '#222222' } : undefined}>
                             <DropdownMenuItem
                               onClick={(e) => {
                                 e.stopPropagation();
