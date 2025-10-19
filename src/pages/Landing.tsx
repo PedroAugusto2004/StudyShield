@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useAuth } from "@/contexts/AuthContext";
 import LanguageSelector from "@/components/LanguageSelector";
 import { useCookieConsent } from "@/hooks/useCookieConsent";
 import { Shield, Brain, Lock, Zap, Focus, BookOpen, Award, Smartphone, ArrowRight, Play, ShieldCheck, Filter, Timer, Database, Sparkles, RefreshCw, BarChart3, GraduationCap, Briefcase, Users, Baby, BellOff, Eye, Clock, Target, WifiOff, Globe, Cpu } from "lucide-react";
@@ -37,7 +38,15 @@ const useChartAnimation = (inView: boolean) => {
 const Landing = () => {
   const navigate = useNavigate();
   const { t } = useLanguage();
+  const { user } = useAuth();
   const { canUseAnalytics, enableAnalytics } = useCookieConsent();
+  
+  // Redirect authenticated users to chat
+  useEffect(() => {
+    if (user) {
+      navigate('/chat');
+    }
+  }, [user, navigate]);
   
   // Enable analytics if cookies are accepted
   useEffect(() => {
