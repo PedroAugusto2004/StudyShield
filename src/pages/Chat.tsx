@@ -195,6 +195,7 @@ const Chat = () => {
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const generationAbortRef = useRef<AbortController | null>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const { smoothScrollToBottom } = useSmoothScroll();
 
   const renderMarkdownContent = (content: string) => {
@@ -722,12 +723,24 @@ const Chat = () => {
       setRecognition(recognitionInstance);
     }
     
+    // Fix iOS keyboard overlay issue
+    const handleResize = () => {
+      if (inputRef.current && document.activeElement === inputRef.current) {
+        setTimeout(() => {
+          inputRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300);
+      }
+    };
+    
+    window.addEventListener('resize', handleResize);
+    
     // Cleanup function
     return () => {
       clearInterval(checkInterval);
       window.removeEventListener('online', handleOnline);
       window.removeEventListener('offline', handleOffline);
       window.removeEventListener('personalizationUpdated', handlePersonalizationUpdate);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -1515,13 +1528,27 @@ const Chat = () => {
               </div>
             ) : (
               <Input
+                ref={inputRef}
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
                 onPaste={handlePaste}
+                onFocus={(e) => {
+                  setTimeout(() => {
+                    e.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  }, 300);
+                }}
                 placeholder={t('what.do.you.want.to.learn')}
                 className={`w-full bg-transparent border-0 focus-visible:ring-0 focus:outline-none text-sm px-1 py-2 ${isDark ? 'text-white placeholder:text-gray-400' : 'text-black placeholder:text-gray-500'}`}
                 disabled={isTyping}
+                autoComplete="off"
+                autoCorrect="on"
+                autoCapitalize="sentences"
+                spellCheck="true"
+                inputMode="text"
+                name="chat-message"
+                id="chat-input"
+                data-form-type="other"
                 style={{ fontSize: '16px', outline: 'none', boxShadow: 'none' }}
               />
             )}
