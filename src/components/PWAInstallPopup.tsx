@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Download, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCookies } from "@/contexts/CookiesContext";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface BeforeInstallPromptEvent extends Event {
   prompt(): Promise<void>;
@@ -13,6 +14,7 @@ const PWAInstallPopup = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const { cookiesAccepted, showBanner } = useCookies();
+  const { t } = useLanguage();
 
   useEffect(() => {
     // Don't show if already installed as PWA
@@ -65,13 +67,13 @@ const PWAInstallPopup = () => {
     
     if (isSafari) {
       // Safari instructions
-      alert('To install on Safari:\n\n1. Tap the Share button\n2. Scroll down and tap "Add to Home Screen"\n3. Tap "Add" to install the app');
+      alert(t('pwa.safari.instructions'));
       setShowPopup(false);
       return;
     }
 
     if (!deferredPrompt) {
-      alert('Installation not available. Please use your browser\'s install option.');
+      alert(t('pwa.not.available'));
       setShowPopup(false);
       return;
     }
@@ -136,13 +138,13 @@ const PWAInstallPopup = () => {
               <div className="flex items-center gap-2 sm:gap-3 mb-3">
                 <img src="/white-icon.png" alt="StudyShield" className="w-5 h-5 sm:w-6 sm:h-6" />
                 <div>
-                  <h3 className="font-bold text-base sm:text-lg text-white">Install StudyShield</h3>
-                  <p className="text-white/80 text-xs sm:text-sm">Get the app experience</p>
+                  <h3 className="font-bold text-base sm:text-lg text-white">{t('pwa.install.title')}</h3>
+                  <p className="text-white/80 text-xs sm:text-sm">{t('pwa.install.subtitle')}</p>
                 </div>
               </div>
 
               <p className="text-white/90 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">
-                Install StudyShield for faster access, offline features, and a native app experience.
+                {t('pwa.install.description')}
               </p>
 
               <div className="flex gap-2">
@@ -151,14 +153,14 @@ const PWAInstallPopup = () => {
                   className="flex-1 bg-white text-gray-900 hover:bg-gray-100 font-semibold py-2 px-3 sm:px-4 text-sm rounded-xl transition-all duration-200 hover:scale-105 shadow-lg"
                 >
                   <Download className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-                  Install
+                  {t('pwa.install.button')}
                 </Button>
                 <Button
                   onClick={handleDismiss}
                   variant="ghost"
                   className="text-white/80 hover:text-white hover:bg-white/10 px-3 sm:px-4 py-2 text-sm rounded-xl"
                 >
-                  Later
+                  {t('pwa.install.later')}
                 </Button>
               </div>
             </div>

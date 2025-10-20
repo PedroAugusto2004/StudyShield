@@ -1,10 +1,12 @@
 import React from 'react';
 import { useCookies } from '@/contexts/CookiesContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { X, Cookie } from 'lucide-react';
 
 const CookiesBanner: React.FC = () => {
   const { showBanner, acceptCookies, declineCookies } = useCookies();
+  const { t } = useLanguage();
 
   if (!showBanner) return null;
 
@@ -19,11 +21,10 @@ const CookiesBanner: React.FC = () => {
           <div className="flex-1 space-y-3">
             <div>
               <h3 className="text-base sm:text-lg font-semibold text-foreground mb-2">
-                We use cookies
+                {t('cookies.title')}
               </h3>
               <p className="text-xs sm:text-sm text-white leading-relaxed">
-                We use cookies to enhance your experience, analyze site usage, and personalize content. 
-                By continuing to use StudyShield, you agree to our use of cookies.
+                {t('cookies.description')}
               </p>
             </div>
             
@@ -33,14 +34,14 @@ const CookiesBanner: React.FC = () => {
                 className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto sm:flex-none"
                 size="sm"
               >
-                Accept All
+                {t('cookies.accept')}
               </Button>
               <Button
                 onClick={declineCookies}
                 className="bg-blue-900 hover:bg-blue-800 text-white w-full sm:w-auto sm:flex-none"
                 size="sm"
               >
-                Decline
+                {t('cookies.decline')}
               </Button>
               <Button
                 variant="ghost"
@@ -49,7 +50,7 @@ const CookiesBanner: React.FC = () => {
                 asChild
               >
                 <a href="/privacy" target="_blank" rel="noopener noreferrer">
-                  Learn More
+                  {t('cookies.learn.more')}
                 </a>
               </Button>
             </div>

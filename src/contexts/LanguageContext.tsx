@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+﻿import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { useAuth } from './AuthContext';
 import { userDataService } from '@/services/userDataService';
 
@@ -432,7 +432,21 @@ const translations: Record<Language, Record<string, string>> = {
     'account.deleted': 'Account deleted',
     'account.deleted.description': 'Your account has been permanently deleted.',
     'google.password.info': 'Password management is handled by Google for your account.',
-    'google.account.delete.warning': 'You are signed in with Google. Your account will be permanently deleted.'
+    'google.account.delete.warning': 'You are signed in with Google. Your account will be permanently deleted.',
+    
+    // Cookies Banner
+    'cookies.title': 'We use cookies',
+    'cookies.description': 'We use cookies to enhance your experience, analyze site usage, and personalize content. By continuing to use StudyShield, you agree to our use of cookies.',
+    'cookies.accept': 'Accept All',
+    'cookies.decline': 'Decline',
+    'cookies.learn.more': 'Learn More',
+    
+    // PWA Install
+    'pwa.install.title': 'Install StudyShield',
+    'pwa.install.subtitle': 'Get the app experience',
+    'pwa.install.description': 'Install StudyShield for faster access, offline features, and a native app experience.',
+    'pwa.install.button': 'Install',
+    'pwa.install.later': 'Later'
   },
   es: {
     // Landing Page
@@ -843,7 +857,21 @@ const translations: Record<Language, Record<string, string>> = {
     'account.deleted': 'Cuenta eliminada',
     'account.deleted.description': 'Tu cuenta ha sido eliminada permanentemente.',
     'google.password.info': 'La gestión de contraseñas es manejada por Google para tu cuenta.',
-    'google.account.delete.warning': 'Has iniciado sesión con Google. Tu cuenta será eliminada permanentemente.'
+    'google.account.delete.warning': 'Has iniciado sesión con Google. Tu cuenta será eliminada permanentemente.',
+    
+    // Cookies Banner
+    'cookies.title': 'Usamos cookies',
+    'cookies.description': 'Usamos cookies para mejorar su experiencia, analizar el uso del sitio y personalizar el contenido. Al continuar usando StudyShield, acepta nuestro uso de cookies.',
+    'cookies.accept': 'Aceptar Todo',
+    'cookies.decline': 'Rechazar',
+    'cookies.learn.more': 'Más Información',
+    
+    // PWA Install
+    'pwa.install.title': 'Instalar StudyShield',
+    'pwa.install.subtitle': 'Obtén la experiencia de la aplicación',
+    'pwa.install.description': 'Instala StudyShield para acceso más rápido, funciones sin conexión y una experiencia de aplicación nativa.',
+    'pwa.install.button': 'Instalar',
+    'pwa.install.later': 'Más Tarde'
   },
   fr: {
     // Landing Page
@@ -1344,7 +1372,17 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.send.message': 'Envoyer le Message',
     'contact.sending': 'Envoi...',
     'contact.success.message': 'Message envoyé avec succès! Nous vous répondrons bientôt.',
-    'contact.error.message': 'Échec de l\'envoi du message. Veuillez réessayer.'
+    'contact.error.message': 'Échec de l\'envoi du message. Veuillez réessayer.',
+    'cookies.title': 'Nous utilisons des cookies',
+    'cookies.description': 'Nous utilisons des cookies pour améliorer votre expérience, analyser l\'utilisation du site et personnaliser le contenu. En continuant à utiliser StudyShield, vous acceptez notre utilisation des cookies.',
+    'cookies.accept': 'Tout Accepter',
+    'cookies.decline': 'Refuser',
+    'cookies.learn.more': 'En Savoir Plus',
+    'pwa.install.title': 'Installer StudyShield',
+    'pwa.install.subtitle': 'Obtenez l\'expérience de l\'application',
+    'pwa.install.description': 'Installez StudyShield pour un accès plus rapide, des fonctionnalités hors ligne et une expérience d\'application native.',
+    'pwa.install.button': 'Installer',
+    'pwa.install.later': 'Plus Tard'
   },
   de: {
     // Landing Page
@@ -1830,7 +1868,17 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.send.message': 'Nachricht Senden',
     'contact.sending': 'Wird gesendet...',
     'contact.success.message': 'Nachricht erfolgreich gesendet! Wir melden uns bald bei Ihnen.',
-    'contact.error.message': 'Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.'
+    'contact.error.message': 'Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.',
+    'cookies.title': 'Wir verwenden Cookies',
+    'cookies.description': 'Wir verwenden Cookies, um Ihre Erfahrung zu verbessern, die Website-Nutzung zu analysieren und Inhalte zu personalisieren. Durch die weitere Nutzung von StudyShield stimmen Sie unserer Verwendung von Cookies zu.',
+    'cookies.accept': 'Alle Akzeptieren',
+    'cookies.decline': 'Ablehnen',
+    'cookies.learn.more': 'Mehr Erfahren',
+    'pwa.install.title': 'StudyShield Installieren',
+    'pwa.install.subtitle': 'Holen Sie sich das App-Erlebnis',
+    'pwa.install.description': 'Installieren Sie StudyShield für schnelleren Zugriff, Offline-Funktionen und ein natives App-Erlebnis.',
+    'pwa.install.button': 'Installieren',
+    'pwa.install.later': 'Später'
   },
   pt: {
     // Landing Page
@@ -2244,7 +2292,17 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.send.message': 'Enviar Mensagem',
     'contact.sending': 'Enviando...',
     'contact.success.message': 'Mensagem enviada com sucesso! Entraremos em contato em breve.',
-    'contact.error.message': 'Falha ao enviar mensagem. Por favor, tente novamente.'
+    'contact.error.message': 'Falha ao enviar mensagem. Por favor, tente novamente.',
+    'cookies.title': 'Usamos cookies',
+    'cookies.description': 'Usamos cookies para melhorar sua experiência, analisar o uso do site e personalizar o conteúdo. Ao continuar usando o StudyShield, você concorda com nosso uso de cookies.',
+    'cookies.accept': 'Aceitar Tudo',
+    'cookies.decline': 'Recusar',
+    'cookies.learn.more': 'Saiba Mais',
+    'pwa.install.title': 'Instalar StudyShield',
+    'pwa.install.subtitle': 'Obtenha a experiência do aplicativo',
+    'pwa.install.description': 'Instale o StudyShield para acesso mais rápido, recursos offline e uma experiência de aplicativo nativo.',
+    'pwa.install.button': 'Instalar',
+    'pwa.install.later': 'Mais Tarde'
   },
   zh: {
     // Landing Page
@@ -2657,7 +2715,17 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.send.message': '发送消息',
     'contact.sending': '发送中...',
     'contact.success.message': '消息发送成功！我们会尽快回复您。',
-    'contact.error.message': '发送消息失败。请重试。'
+    'contact.error.message': '发送消息失败。请重试。',
+    'cookies.title': '我们使用Cookie',
+    'cookies.description': '我们使用Cookie来增强您的体验、分析网站使用情况并个性化内容。继续使用StudyShield即表示您同意我们使用Cookie。',
+    'cookies.accept': '全部接受',
+    'cookies.decline': '拒绝',
+    'cookies.learn.more': '了解更多',
+    'pwa.install.title': '安装StudyShield',
+    'pwa.install.subtitle': '获得应用体验',
+    'pwa.install.description': '安装StudyShield以获得更快的访问速度、离线功能和原生应用体验。',
+    'pwa.install.button': '安装',
+    'pwa.install.later': '稍后'
   },
   ja: {
     // Landing Page
@@ -3070,9 +3138,30 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.send.message': 'メッセージを送信',
     'contact.sending': '送信中...',
     'contact.success.message': 'メッセージが正常に送信されました！すぐにご連絡いたします。',
-    'contact.error.message': 'メッセージの送信に失敗しました。もう一度お試しください。'
+    'contact.error.message': 'メッセージの送信に失敗しました。もう一度お試しください。',
+    'cookies.title': 'Cookieを使用しています',
+    'cookies.description': 'Cookieを使用して、お客様の体験を向上させ、サイトの使用状況を分析し、コンテンツをパーソナライズします。StudyShieldを引き続き使用することで、Cookieの使用に同意したことになります。',
+    'cookies.accept': 'すべて受け入れる',
+    'cookies.decline': '拒否',
+    'cookies.learn.more': '詳細を見る',
+    'pwa.install.title': 'StudyShieldをインストール',
+    'pwa.install.subtitle': 'アプリ体験を取得',
+    'pwa.install.description': 'より速いアクセス、オフライン機能、ネイティブアプリ体験のためにStudyShieldをインストールします。',
+    'pwa.install.button': 'インストール',
+    'pwa.install.later': '後で'
   },
   ko: {
+    'cookies.title': '쿠키를 사용합니다',
+    'cookies.description': '쿠키를 사용하여 경험을 향상시키고, 사이트 사용을 분석하며, 콘텐츠를 개인화합니다. StudyShield를 계속 사용하면 쿠키 사용에 동의하는 것입니다.',
+    'cookies.accept': '모두 수락',
+    'cookies.decline': '거부',
+    'cookies.learn.more': '자세히 알아보기',
+    'pwa.install.title': 'StudyShield 설치',
+    'pwa.install.subtitle': '앱 경험 얻기',
+    'pwa.install.description': '더 빠른 액세스, 오프라인 기능 및 네이티브 앱 경험을 위해 StudyShield를 설치하세요.',
+    'pwa.install.button': '설치',
+    'pwa.install.later': '나중에',
+    
     // Landing Page
     'get.started': '시작하기',
     'alternative.download.helper': '대안: 다운로드 도우미 사용',
