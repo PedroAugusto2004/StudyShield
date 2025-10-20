@@ -317,6 +317,9 @@ const translations: Record<Language, Record<string, string>> = {
     'email.verification.failed': 'Email verification failed. Please try again.',
     'unexpected.error': 'An unexpected error occurred',
     'google.signin.failed': 'Failed to sign in with Google',
+    'terms.agreement.signin': 'By signing in to StudyShield, you agree with the',
+    'terms.agreement.signup': 'By creating an account, you agree with the',
+    'terms.and.conditions': 'Terms and Conditions',
     
     // Chat Page
     'good.morning': 'Good morning',
@@ -743,6 +746,9 @@ const translations: Record<Language, Record<string, string>> = {
     'email.verification.failed': 'La verificación de email falló. Por favor intenta de nuevo.',
     'unexpected.error': 'Ocurrió un error inesperado',
     'google.signin.failed': 'Error al iniciar sesión con Google',
+    'terms.agreement.signin': 'Al iniciar sesión en StudyShield, aceptas los',
+    'terms.agreement.signup': 'Al crear una cuenta, aceptas los',
+    'terms.and.conditions': 'Términos y Condiciones',
     
     // Chat Page
     'good.morning': 'Buenos días',
@@ -903,6 +909,9 @@ const translations: Record<Language, Record<string, string>> = {
     'account.created': 'Compte créé! Veuillez vérifier votre email pour vérifier votre compte avant de vous connecter.',
     'reset.email.sent': 'Email de réinitialisation envoyé! Vérifiez votre boîte de réception.',
     'google.signin.failed': 'Échec de la connexion avec Google',
+    'terms.agreement.signin': 'En vous connectant à StudyShield, vous acceptez les',
+    'terms.agreement.signup': 'En créant un compte, vous acceptez les',
+    'terms.and.conditions': 'Conditions Générales',
     // Chat Page
     'good.morning': 'Bonjour',
     'good.afternoon': 'Bon après-midi',
@@ -1539,6 +1548,9 @@ const translations: Record<Language, Record<string, string>> = {
     'account.created': 'Konto erstellt! Bitte überprüfen Sie Ihre E-Mail, um Ihr Konto zu verifizieren, bevor Sie sich anmelden.',
     'reset.email.sent': 'Passwort-Reset-E-Mail gesendet! Überprüfen Sie Ihren Posteingang.',
     'google.signin.failed': 'Anmeldung mit Google fehlgeschlagen',
+    'terms.agreement.signin': 'Durch die Anmeldung bei StudyShield stimmen Sie den',
+    'terms.agreement.signup': 'Durch die Erstellung eines Kontos stimmen Sie den',
+    'terms.and.conditions': 'Allgemeinen Geschäftsbedingungen zu',
     // Chat Page
     'good.morning': 'Guten Morgen',
     'good.afternoon': 'Guten Tag',
@@ -2036,6 +2048,9 @@ const translations: Record<Language, Record<string, string>> = {
     'account.created': 'Conta criada! Verifique seu email para verificar sua conta antes de fazer login.',
     'reset.email.sent': 'Email de redefinição enviado! Verifique sua caixa de entrada.',
     'google.signin.failed': 'Falha ao entrar com Google',
+    'terms.agreement.signin': 'Ao entrar no StudyShield, você concorda com os',
+    'terms.agreement.signup': 'Ao criar uma conta, você concorda com os',
+    'terms.and.conditions': 'Termos e Condições',
     // Chat Page
     'good.morning': 'Bom dia',
     'good.afternoon': 'Boa tarde',
@@ -2459,6 +2474,9 @@ const translations: Record<Language, Record<string, string>> = {
     'account.created': '账户已创建！请检查您的邮箱以验证账户后再登录。',
     'reset.email.sent': '密码重置邮件已发送！请检查您的收件箱。',
     'google.signin.failed': 'Google登录失败',
+    'terms.agreement.signin': '登录StudyShield即表示您同意',
+    'terms.agreement.signup': '创建账户即表示您同意',
+    'terms.and.conditions': '条款和条件',
     // Chat Page
     'good.morning': '早上好',
     'good.afternoon': '下午好',
@@ -2882,6 +2900,9 @@ const translations: Record<Language, Record<string, string>> = {
     'account.created': 'アカウントが作成されました！サインインする前にメールでアカウントを確認してください。',
     'reset.email.sent': 'パスワードリセットメールを送信しました！受信箱を確認してください。',
     'google.signin.failed': 'Googleサインインに失敗しました',
+    'terms.agreement.signin': 'StudyShieldにサインインすることで、',
+    'terms.agreement.signup': 'アカウントを作成することで、',
+    'terms.and.conditions': '利用規約に同意したことになります',
     // Chat Page
     'good.morning': 'おはようございます',
     'good.afternoon': 'こんにちは',
@@ -3320,6 +3341,9 @@ const translations: Record<Language, Record<string, string>> = {
     'account.created': '계정이 생성되었습니다! 로그인하기 전에 이메일을 확인하여 계정을 인증해주세요.',
     'reset.email.sent': '비밀번호 재설정 이메일이 전송되었습니다! 받은편지함을 확인하세요.',
     'google.signin.failed': 'Google 로그인에 실패했습니다',
+    'terms.agreement.signin': 'StudyShield에 로그인하면',
+    'terms.agreement.signup': '계정을 생성하면',
+    'terms.and.conditions': '이용 약관에 동의하는 것입니다',
     // Chat Page
     'good.morning': '좋은 아침입니다',
     'good.afternoon': '좋은 오후입니다',

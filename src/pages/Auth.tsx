@@ -265,14 +265,14 @@ const Auth = () => {
 
               {!isForgotPassword && (
                 <p className="text-xs text-gray-600 text-center">
-                  By signing in to StudyShield, you agree with the{' '}
+                  {t(isLogin ? 'terms.agreement.signin' : 'terms.agreement.signup')}{' '}
                   <a 
                     href="/terms" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:underline"
                   >
-                    Terms and Conditions
+                    {t('terms.and.conditions')}
                   </a>
                 </p>
               )}
