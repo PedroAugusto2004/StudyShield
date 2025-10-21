@@ -66,7 +66,7 @@ const ConversationSidebar = ({
   const searchInputRef = useRef<HTMLInputElement>(null);
   const isDark = actualTheme === 'dark';
   
-  console.log('ConversationSidebar received conversations:', conversations);
+  // Removed console.log to prevent user data exposure
 
   const handleEditStart = (conversation: Conversation) => {
     setEditingId(conversation.id);

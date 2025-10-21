@@ -78,7 +78,7 @@ export const useConversations = () => {
   }, [user]);
 
   const saveConversations = async (convs: Conversation[]) => {
-    console.log('Saving conversations:', convs);
+    // Removed console.log to prevent user data exposure
     try {
       // Limit to 20 most recent conversations
       const limitedConvs = convs.slice(0, 20);
@@ -129,7 +129,7 @@ export const useConversations = () => {
   };
 
   const updateConversation = (id: string, updates: Partial<Conversation>) => {
-    console.log('Updating conversation:', id, updates);
+    // Removed console.log to prevent user data exposure
     setConversations(prevConversations => {
       const updatedConv = prevConversations.find(conv => conv.id === id);
       const updated = updatedConv 
@@ -144,7 +144,7 @@ export const useConversations = () => {
       const others = prevConversations.filter(conv => conv.id !== id);
       const reordered = [updated, ...others];
       
-      console.log('Updated conversations array:', reordered);
+      // Removed console.log to prevent user data exposure
       saveConversations(reordered);
       return reordered;
     });

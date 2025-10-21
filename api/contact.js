@@ -1,5 +1,9 @@
 import { Resend } from 'resend';
+import DOMPurify from 'dompurify';
+import { JSDOM } from 'jsdom';
 
+const window = new JSDOM('').window;
+const purify = DOMPurify(window);
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req, res) {
@@ -14,17 +18,23 @@ export default async function handler(req, res) {
   }
 
   try {
+    // Sanitize all user inputs to prevent XSS
+    const sanitizedName = purify.sanitize(name, { ALLOWED_TAGS: [] });
+    const sanitizedEmail = purify.sanitize(email, { ALLOWED_TAGS: [] });
+    const sanitizedSubject = purify.sanitize(subject, { ALLOWED_TAGS: [] });
+    const sanitizedMessage = purify.sanitize(message.replace(/\n/g, '<br>'), { ALLOWED_TAGS: ['br'] });
+
     await resend.emails.send({
       from: 'StudyShield <onboarding@resend.dev>',
       to: ['pa405369@gmail.com'],
-      subject: `Contact Form: ${subject}`,
+      subject: `Contact Form: ${sanitizedSubject}`,
       html: `
         <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Subject:</strong> ${subject}</p>
+        <p><strong>Name:</strong> ${sanitizedName}</p>
+        <p><strong>Email:</strong> ${sanitizedEmail}</p>
+        <p><strong>Subject:</strong> ${sanitizedSubject}</p>
         <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
+        <p>${sanitizedMessage}</p>
       `,
     });
 

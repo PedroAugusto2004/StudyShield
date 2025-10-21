@@ -27,6 +27,66 @@ StudyShield is a revolutionary Progressive Web Application (PWA) that combines c
 - **🎤 Voice Input**: Speech-to-text functionality
 - **🌙 Dark/Light Theme**: Adaptive theming system
 
+## 📚 Documentation
+
+### Architecture Overview
+
+StudyShield is built with a modern, scalable architecture:
+
+- **Frontend**: React 18 with TypeScript, Vite for build tooling
+- **State Management**: React Context API with custom hooks
+- **Authentication**: Supabase Auth with OAuth providers
+- **AI Integration**: Google Gemini AI (Flash & Nano)
+- **Internationalization**: react-i18next for multi-language support
+- **Styling**: Tailwind CSS with Radix UI components
+- **PWA**: Service Worker with offline capabilities
+
+### Key Components
+
+#### AI Service (`src/services/aiService.ts`)
+The core AI service that manages communication with different AI providers:
+
+```typescript
+import { AIService } from '@/services/aiService';
+
+const aiService = new AIService();
+
+// Send a message
+const response = await aiService.sendMessage('What is machine learning?', {
+  model: 'pro',
+  history: previousMessages
+});
+
+// Stream a response
+await aiService.sendMessageStream('Explain quantum computing', 
+  (chunk) => console.log(chunk),
+  { model: 'flash' }
+);
+```
+
+#### Error Boundaries
+Comprehensive error handling with custom error boundaries:
+
+- `ErrorBoundary`: Main application error boundary
+- `ChatErrorBoundary`: Specific error handling for chat functionality
+
+#### Translation System
+Modern i18n implementation with react-i18next:
+
+```typescript
+import { useTranslation } from 'react-i18next';
+
+const { t } = useTranslation();
+const greeting = t('welcome.message');
+```
+
+### Security Features
+
+- **Path Traversal Protection**: Secure file path handling in build scripts
+- **User Data Sanitization**: No sensitive data in console logs
+- **Content Security**: AI-powered content filtering
+- **Secure Authentication**: Supabase-powered user management
+
 ## 🚀 Live Demo
 
 **🔗 [Try StudyShield Now](http://studyshield.site/)**

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { flushSync } from "react-dom";
 import { useNavigate } from "react-router-dom";
+import DOMPurify from "dompurify";
 import { useAuth } from "@/contexts/AuthContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -18,6 +19,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import SettingsModal from "@/components/SettingsModal";
 import ConversationSidebar from "@/components/ConversationSidebar";
 import HamsterLoader from "@/components/HamsterLoader";
+import ChatErrorBoundary from "@/components/ChatErrorBoundary";
 import { useConversations, type Message, type Conversation } from "@/hooks/useConversations";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import { useStreamingText } from "@/hooks/useStreamingText";
@@ -448,22 +450,11 @@ const Chat = () => {
   const parseInlineMarkdown = (text: string) => {
     if (typeof text !== 'string') return text;
     
-    // Decode HTML entities first
-    const decodedText = text
-      .replace(/&amp;/g, '&')
-      .replace(/&lt;/g, '<')
-      .replace(/&gt;/g, '>')
-      .replace(/&quot;/g, '"')
-      .replace(/&#x27;/g, "'")
-      .replace(/&#39;/g, "'");
-    
-    // Sanitize input to prevent XSS (but allow safe HTML entities)
-    const sanitizedText = decodedText.replace(/[<>]/g, (match) => {
-      const entities: { [key: string]: string } = {
-        '<': '&lt;',
-        '>': '&gt;'
-      };
-      return entities[match] || match;
+    // Sanitize input first to prevent XSS
+    const sanitizedText = DOMPurify.sanitize(text, { 
+      ALLOWED_TAGS: [],
+      ALLOWED_ATTR: [],
+      KEEP_CONTENT: true 
     });
     
     // Handle bold text with ** syntax - more comprehensive regex
@@ -605,7 +596,7 @@ const Chat = () => {
     }
     
     const newGreetingContent = `${greeting}, ${userName}!`;
-    console.log('Updating greeting:', newGreetingContent, 'Current language:', localStorage.getItem('userLanguage'), 'Browser lang:', navigator.language);
+    // Removed console.log to prevent user data exposure
     
     // Always update or create greeting message when language changes
     setMessages(prev => {
@@ -883,7 +874,7 @@ const Chat = () => {
     let isNewConversation = false;
     if (!conversationId) {
       const newConv = createNewConversation();
-      console.log('Created new conversation:', newConv);
+      // Removed console.log to prevent user data exposure
       conversationId = newConv.id;
       isNewConversation = true;
     }
@@ -896,7 +887,7 @@ const Chat = () => {
     // Update title for new conversations after messages are set
     if (isNewConversation && conversationId) {
       const title = generateTitle(trimmedInput);
-      console.log('Setting title for new conversation:', title);
+      // Removed console.log to prevent user data exposure
       updateConversation(conversationId, { title });
     }
 
@@ -1384,7 +1375,7 @@ const Chat = () => {
                   }`}>
                     {message.type === 'user' ? (
                       <>
-                        <p className="text-sm leading-relaxed text-white">{message.content}</p>
+                        <p className="text-sm leading-relaxed text-white">{DOMPurify.sanitize(message.content, { ALLOWED_TAGS: [], KEEP_CONTENT: true })}</p>
                         {message.files && message.files.length > 0 && (
                           <div className="mt-2">
                             <div className="flex flex-wrap gap-2">
@@ -1836,4 +1827,10 @@ const Chat = () => {
   );
 };
 
-export default Chat;
+const ChatWithErrorBoundary = () => (
+  <ChatErrorBoundary>
+    <Chat />
+  </ChatErrorBoundary>
+);
+
+export default ChatWithErrorBoundary;

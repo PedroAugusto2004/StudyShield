@@ -1,11 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { Copy } from "lucide-react";
+import DOMPurify from "dompurify";
 
 export const useMarkdownRenderer = (isDark: boolean) => {
   const parseInlineMarkdown = (text: string) => {
     if (typeof text !== 'string') return text;
     
-    const parts = text.split(/(\*\*[^*]*\*\*)/g);
+    // Sanitize input to prevent XSS
+    const sanitizedText = DOMPurify.sanitize(text, { 
+      ALLOWED_TAGS: [],
+      ALLOWED_ATTR: [],
+      KEEP_CONTENT: true 
+    });
+    
+    const parts = sanitizedText.split(/(\*\*[^*]*\*\*)/g);
     return parts.map((part, index) => {
       if (part.startsWith('**') && part.endsWith('**') && part.length > 4) {
         const content = part.slice(2, -2);

@@ -10,6 +10,7 @@ import { CookiesProvider } from "./contexts/CookiesContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import DomainRedirect from "./components/DomainRedirect";
 import CookiesBanner from "./components/CookiesBanner";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 import Landing from "./pages/Landing";
 import Auth from "./pages/Auth";
@@ -32,44 +33,46 @@ import { SharedConversation } from "./pages/SharedConversation";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <CookiesProvider>
-      <LanguageProvider>
-        <ThemeProvider>
-          <AuthProvider>
-          <TooltipProvider>
-          <DomainRedirect />
-          <Toaster />
-          <Sonner />
-          <CookiesBanner />
+  <ErrorBoundary>
+    <QueryClientProvider client={queryClient}>
+      <CookiesProvider>
+        <LanguageProvider>
+          <ThemeProvider>
+            <AuthProvider>
+            <TooltipProvider>
+            <DomainRedirect />
+            <Toaster />
+            <Sonner />
+            <CookiesBanner />
 
-          <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="/auth" element={<Auth />} />
-            <Route path="/reset-password" element={<ResetPassword />} />
-            <Route path="/email-verified" element={<EmailVerified />} />
-            <Route path="/verify-email" element={<VerifyEmail />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/help" element={<HelpCenter />} />
-            <Route path="/privacy" element={<PrivacyPolicy />} />
-            <Route path="/terms" element={<TermsOfService />} />
-            <Route path="/oauth/callback" element={<OAuthCallback />} />
+            <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Landing />} />
+              <Route path="/auth" element={<Auth />} />
+              <Route path="/reset-password" element={<ResetPassword />} />
+              <Route path="/email-verified" element={<EmailVerified />} />
+              <Route path="/verify-email" element={<VerifyEmail />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/help" element={<HelpCenter />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/terms" element={<TermsOfService />} />
+              <Route path="/oauth/callback" element={<OAuthCallback />} />
 
-            <Route path="/chat" element={<ProtectedRoute><Chat /></ProtectedRoute>} />
-            <Route path="/knowledge" element={<ProtectedRoute><KnowledgeBase /></ProtectedRoute>} />
-            <Route path="/shared/:shareId" element={<ProtectedRoute><SharedConversation /></ProtectedRoute>} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+              <Route path="/chat" element={<ProtectedRoute><Chat /></ProtectedRoute>} />
+              <Route path="/knowledge" element={<ProtectedRoute><KnowledgeBase /></ProtectedRoute>} />
+              <Route path="/shared/:shareId" element={<ProtectedRoute><SharedConversation /></ProtectedRoute>} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
 
-          </BrowserRouter>
-          </TooltipProvider>
-          </AuthProvider>
-        </ThemeProvider>
-      </LanguageProvider>
-    </CookiesProvider>
-  </QueryClientProvider>
+            </BrowserRouter>
+            </TooltipProvider>
+            </AuthProvider>
+          </ThemeProvider>
+        </LanguageProvider>
+      </CookiesProvider>
+    </QueryClientProvider>
+  </ErrorBoundary>
 );
 
 export default App;

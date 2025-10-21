@@ -68,7 +68,7 @@ const KnowledgeBase = () => {
     e.preventDefault();
     // Handle file drop logic here
     const fileCount = e.dataTransfer.files.length;
-    console.log(`Files dropped: ${fileCount} file(s)`);
+    // Removed console.log to prevent user data exposure
   };
 
   const handleDragOver = (e: React.DragEvent) => {

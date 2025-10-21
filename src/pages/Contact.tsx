@@ -27,7 +27,7 @@ const Contact = () => {
       // Mock API for local development
       if (window.location.hostname === 'localhost') {
         await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API delay
-        console.log('Mock email sent:', formData);
+        // Removed console.log to prevent user data exposure
         setSubmitStatus('success');
         setFormData({ name: '', email: '', subject: '', message: '' });
       } else {

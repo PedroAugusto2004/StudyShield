@@ -1,6 +1,14 @@
 import { supabase } from '@/integrations/supabase/client';
 import type { Conversation } from '@/hooks/useConversations';
 
+// Sanitize log output to prevent log injection
+const sanitizeLog = (data: any): string => {
+  if (typeof data === 'string') {
+    return data.replace(/[\r\n]/g, ' ').substring(0, 100);
+  }
+  return JSON.stringify(data).replace(/[\r\n]/g, ' ').substring(0, 100);
+};
+
 export interface UserProfile {
   id: string;
   name: string | null;
@@ -37,13 +45,13 @@ export const userDataService = {
         });
       
       if (error) {
-        console.error('Error updating user profile:', error);
+        console.error('Error updating user profile');
         return false;
       }
       
       return true;
     } catch (error) {
-      console.error('Database not available, using localStorage only:', error);
+      console.error('Database not available, using localStorage only');
       return false;
     }
   },
@@ -93,13 +101,13 @@ export const userDataService = {
         });
       
       if (error) {
-        console.error('Error saving conversation:', error);
+        console.error('Error saving conversation');
         return false;
       }
       
       return true;
     } catch (error) {
-      console.error('Database not available, using localStorage only:', error);
+      console.error('Database not available, using localStorage only');
       return false;
     }
   },
@@ -112,13 +120,13 @@ export const userDataService = {
         .eq('id', conversationId);
       
       if (error) {
-        console.error('Error deleting conversation:', error);
+        console.error('Error deleting conversation');
         return false;
       }
       
       return true;
     } catch (error) {
-      console.error('Database not available, using localStorage only:', error);
+      console.error('Database not available, using localStorage only');
       return false;
     }
   },
@@ -135,13 +143,13 @@ export const userDataService = {
         });
       
       if (error) {
-        console.error('Error updating language preference:', error);
+        console.error('Error updating language preference');
         return false;
       }
       
       return true;
     } catch (error) {
-      console.error('Database not available for language sync:', error);
+      console.error('Database not available for language sync');
       return false;
     }
   },
@@ -155,19 +163,15 @@ export const userDataService = {
         .single();
       
       if (error) {
-        console.log('Error fetching language preference:', error.message);
         return null;
       }
       
       if (!data || !data.language) {
-        console.log('No language preference found in database');
         return null;
       }
-      
-      console.log('Retrieved language preference from database:', data.language);
       return data.language;
     } catch (error) {
-      console.error('Exception getting language preference:', error);
+      console.error('Exception getting language preference');
       return null;
     }
   },
@@ -202,8 +206,6 @@ export const userDataService = {
       ]) as UserProfile | null;
       
       if (profile) {
-        console.log('Loaded user profile from database:', profile);
-        
         if (profile.name) {
           localStorage.setItem('userName', profile.name);
           window.dispatchEvent(new CustomEvent('nameUpdated', { detail: { name: profile.name } }));
@@ -215,18 +217,14 @@ export const userDataService = {
         if (profile.language && ['en', 'es', 'fr', 'de', 'pt', 'zh', 'ja', 'ko'].includes(profile.language)) {
           const currentLanguage = localStorage.getItem('userLanguage');
           if (currentLanguage !== profile.language) {
-            console.log('Updating language from database:', profile.language);
             localStorage.setItem('userLanguage', profile.language);
             window.dispatchEvent(new CustomEvent('languageUpdated', { detail: { language: profile.language } }));
           }
         }
         
         window.dispatchEvent(new CustomEvent('profileLoaded'));
-      } else {
-        console.log('No user profile found in database');
       }
     } catch (error) {
-      console.log('Failed to load user data from database:', error.message);
       // Silently continue without database data
     }
   }

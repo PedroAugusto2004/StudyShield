@@ -1,4 +1,4 @@
-const VERSION = '1760461117736';
+const VERSION = '1761079757182';
 const CACHE_NAME = `studyshield-v${VERSION}`;
 const STATIC_CACHE = `studyshield-static-v${VERSION}`;
 
