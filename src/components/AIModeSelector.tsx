@@ -22,19 +22,19 @@ interface AIModeInfo {
 }
 
 const MODE_INFO: Record<AIMode, AIModeInfo> = {
-  online: {
-    icon: <Globe className="h-4 w-4" />,
-    label: 'Online Mode',
-    description: 'Full AI capabilities with Gemini 2.5 Flash',
-    privacy: 'Data processed by Google AI',
-    color: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
-  },
   offline: {
     icon: <WifiOff className="h-4 w-4" />,
     label: 'Offline Mode',
     description: 'Local AI with Gemini Nano',
     privacy: 'All data stays on your device',
     color: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200'
+  },
+  online: {
+    icon: <Globe className="h-4 w-4" />,
+    label: 'Online Mode',
+    description: 'Full AI capabilities with Gemini 2.5 Flash',
+    privacy: 'Data processed by Google AI',
+    color: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
   },
   guest: {
     icon: <Shield className="h-4 w-4" />,
@@ -142,7 +142,7 @@ export const AIModeSelector: React.FC<AIModeSelector> = ({ onModeChange, compact
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="grid gap-2">
-          {(['online', 'offline', 'guest'] as AIMode[]).map(mode => {
+          {(['offline', 'online', 'guest'] as AIMode[]).map(mode => {
             const info = MODE_INFO[mode];
             const isAvailable = status.availableModes.includes(mode);
             const isCurrent = selectedMode === mode;

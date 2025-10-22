@@ -1664,16 +1664,6 @@ const Chat = () => {
                       <DropdownMenuContent className={`${isDark ? 'border-gray-700' : 'bg-white border-gray-200'} backdrop-blur-md border`} style={{ backgroundColor: isDark ? '#222222' : undefined }} align="start">
                         <DropdownMenuItem 
                           onClick={() => {
-                            setSelectedMode('online');
-                            aiService.setConfig({ preferredMode: 'online' });
-                          }}
-                          className={`${isDark ? 'text-white' : 'text-black'} ${selectedMode === 'online' ? 'bg-blue-500/10' : ''}`}
-                        >
-                          <Zap className="mr-2 h-4 w-4" />
-                          Gemini 2.5 Flash Lite
-                        </DropdownMenuItem>
-                        <DropdownMenuItem 
-                          onClick={() => {
                             setSelectedMode('offline');
                             aiService.setConfig({ preferredMode: 'offline' });
                             setShowOfflineHint(true);
@@ -1687,6 +1677,16 @@ const Chat = () => {
                               {aiStatus.nanoAvailable ? t('ready') : t('unavailable')}
                             </span>
                           </div>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem 
+                          onClick={() => {
+                            setSelectedMode('online');
+                            aiService.setConfig({ preferredMode: 'online' });
+                          }}
+                          className={`${isDark ? 'text-white' : 'text-black'} ${selectedMode === 'online' ? 'bg-blue-500/10' : ''}`}
+                        >
+                          <Zap className="mr-2 h-4 w-4" />
+                          Gemini 2.5 Flash 
                         </DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>
