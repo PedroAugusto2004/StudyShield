@@ -1145,13 +1145,31 @@ const Chat = () => {
     handleNewConversation();
   };
 
-  const handleShareConversation = (id: string) => {
+  const handleShareConversation = async (id: string) => {
     const conversation = conversations.find(c => c.id === id);
     if (conversation) {
-      const url = `${window.location.origin}/chat/${id}`;
-      setShareUrl(url);
-      setSharingConversationId(id);
-      setShowShareModal(true);
+      try {
+        const { supabase } = await import('@/integrations/supabase/client');
+        
+        const shareId = `${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
+        
+        const { error } = await supabase
+          .from('conversations')
+          .update({ 
+            is_shared: true, 
+            share_id: shareId 
+          })
+          .eq('id', id);
+        
+        if (error) throw error;
+        
+        const url = `${window.location.origin}/shared/${shareId}`;
+        setShareUrl(url);
+        setSharingConversationId(id);
+        setShowShareModal(true);
+      } catch (error) {
+        console.error('Error sharing conversation:', error);
+      }
     }
   };
 
