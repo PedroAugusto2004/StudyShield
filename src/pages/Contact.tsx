@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import studyShieldLogo from "@/assets/studyshield-logo.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSelector from "@/components/LanguageSelector";
+import { toast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const navigate = useNavigate();
@@ -42,8 +43,17 @@ const Contact = () => {
         if (response.ok) {
           setSubmitStatus('success');
           setFormData({ name: '', email: '', subject: '', message: '' });
+          toast({
+            title: "✅ Message Sent!",
+            description: "We've received your message and will get back to you soon.",
+          });
         } else {
           setSubmitStatus('error');
+          toast({
+            title: "❌ Failed to Send",
+            description: "There was an error sending your message. Please try again.",
+            variant: "destructive",
+          });
         }
       }
     } catch (error) {

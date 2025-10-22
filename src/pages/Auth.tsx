@@ -11,6 +11,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { getCorrectSiteUrl } from "@/lib/siteUrl";
 import studyShieldLogo from "@/assets/studyshield-logo.png";
 import PWAInstallPopup from "@/components/PWAInstallPopup";
+import { toast } from "@/hooks/use-toast";
 import "@/styles/pwa-popup.css";
 
 const Auth = () => {
@@ -133,6 +134,10 @@ const Auth = () => {
           window.dispatchEvent(event);
         } catch {}
         setMessage(t('account.created'));
+        toast({
+          title: "📧 Verification Email Sent!",
+          description: "Please check your email to verify your account before signing in.",
+        });
       }
     } catch (error: any) {
       setError(error?.message || t('unexpected.error'));
