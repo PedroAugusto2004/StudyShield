@@ -31,7 +31,7 @@ export interface AIServiceConfig {
  */
 export class AIService {
   private config: AIServiceConfig = {
-    preferredMode: 'online',
+    preferredMode: 'offline',
     fallbackEnabled: true
   };
 
