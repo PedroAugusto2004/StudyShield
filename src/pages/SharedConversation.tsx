@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { useTheme } from "@/contexts/ThemeContext";
-import { Bot, User, ArrowLeft } from "lucide-react";
+import { User, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { Message } from "@/hooks/useConversations";
 
@@ -76,7 +76,7 @@ export const SharedConversation = () => {
 
   if (!user) {
     return (
-      <div className={`min-h-screen flex items-center justify-center ${isDark ? 'bg-gray-950' : 'bg-gray-50'}`}>
+      <div className={`min-h-screen flex items-center justify-center ${isDark ? 'bg-black' : 'bg-white'}`}>
         <div className="text-center">
           <h2 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             Login Required
@@ -94,7 +94,7 @@ export const SharedConversation = () => {
 
   if (loading) {
     return (
-      <div className={`min-h-screen flex items-center justify-center ${isDark ? 'bg-gray-950' : 'bg-gray-50'}`}>
+      <div className={`min-h-screen flex items-center justify-center ${isDark ? 'bg-black' : 'bg-white'}`}>
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
       </div>
     );
@@ -102,7 +102,7 @@ export const SharedConversation = () => {
 
   if (error || !conversation) {
     return (
-      <div className={`min-h-screen flex items-center justify-center ${isDark ? 'bg-gray-950' : 'bg-gray-50'}`}>
+      <div className={`min-h-screen flex items-center justify-center ${isDark ? 'bg-black' : 'bg-white'}`}>
         <div className="text-center">
           <h2 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             {error || "Conversation not found"}
@@ -116,7 +116,7 @@ export const SharedConversation = () => {
   }
 
   return (
-    <div className={`min-h-screen ${isDark ? 'bg-gray-950' : 'bg-gray-50'}`}>
+    <div className={`min-h-screen ${isDark ? 'bg-black' : 'bg-white'}`}>
       <div className="max-w-4xl mx-auto p-4">
         <div className="mb-6 flex items-center gap-4">
           <Button
@@ -145,30 +145,52 @@ export const SharedConversation = () => {
               className={`flex gap-3 ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}
             >
               {message.type === 'ai' && (
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-                  isDark ? 'bg-blue-600' : 'bg-blue-500'
-                }`}>
-                  <Bot className="w-5 h-5 text-white" />
+                <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">
+                  <img src={isDark ? "/white-icon.png" : "/Icon.png"} alt="AI" className="w-5 h-5" />
                 </div>
               )}
               <div
                 className={`max-w-[80%] rounded-2xl px-4 py-3 ${
                   message.type === 'user'
-                    ? isDark
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-blue-500 text-white'
+                    ? 'bg-blue-500 text-white'
                     : isDark
                     ? 'bg-gray-800 text-gray-100'
                     : 'bg-white text-gray-900 border border-gray-200'
                 }`}
               >
                 <p className="text-sm whitespace-pre-wrap break-words">{message.content}</p>
+                {message.files && message.files.length > 0 && (
+                  <div className="mt-2">
+                    <div className="flex flex-wrap gap-2">
+                      {message.files.map((file, idx) => (
+                        <div key={idx}>
+                          {file.type.startsWith('image/') ? (
+                            <div className={message.type === 'user' ? 'bg-blue-600/20 p-2 rounded' : 'bg-gray-700/20 p-2 rounded'}>
+                              <div className={`text-xs mb-1 ${message.type === 'user' ? 'text-blue-100' : isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                                🖼️ {file.name.length > 15 ? file.name.substring(0, 15) + '...' : file.name}
+                              </div>
+                              {message.fileContents?.[idx]?.content && (
+                                <img 
+                                  src={message.fileContents[idx].content} 
+                                  alt={file.name}
+                                  className="w-20 h-20 object-cover rounded border cursor-pointer"
+                                />
+                              )}
+                            </div>
+                          ) : (
+                            <div className={`text-xs px-2 py-1 rounded ${message.type === 'user' ? 'text-blue-100 bg-blue-600/20' : isDark ? 'text-gray-300 bg-gray-700/20' : 'text-gray-600 bg-gray-100'}`}>
+                              {file.type === 'application/pdf' ? '📄' : '📎'} {file.name} ({(file.size / 1024).toFixed(1)}KB)
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
               {message.type === 'user' && (
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-                  isDark ? 'bg-gray-700' : 'bg-gray-300'
-                }`}>
-                  <User className="w-5 h-5" />
+                <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0">
+                  <User className="w-5 h-5 text-white" />
                 </div>
               )}
             </div>
