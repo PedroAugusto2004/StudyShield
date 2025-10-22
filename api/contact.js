@@ -4,7 +4,6 @@ import { JSDOM } from 'jsdom';
 
 const window = new JSDOM('').window;
 const purify = DOMPurify(window);
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -17,7 +16,13 @@ export default async function handler(req, res) {
     return res.status(400).json({ message: 'All fields are required' });
   }
 
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    return res.status(500).json({ message: 'Email service not configured' });
+  }
+
   try {
+    const resend = new Resend(apiKey);
     // Sanitize all user inputs to prevent XSS
     const sanitizedName = purify.sanitize(name, { ALLOWED_TAGS: [] });
     const sanitizedEmail = purify.sanitize(email, { ALLOWED_TAGS: [] });
