@@ -1,9 +1,14 @@
 import { Resend } from 'resend';
-import DOMPurify from 'dompurify';
-import { JSDOM } from 'jsdom';
 
-const window = new JSDOM('').window;
-const purify = DOMPurify(window);
+function sanitize(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;')
+    .replace(/\//g, '&#x2F;');
+}
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -16,22 +21,33 @@ export default async function handler(req, res) {
     return res.status(400).json({ message: 'All fields are required' });
   }
 
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return res.status(400).json({ message: 'Invalid email address' });
+  }
+
   const apiKey = process.env.RESEND_API_KEY;
+  const fromEmail = process.env.CONTACT_FROM_EMAIL || 'StudyShield <onboarding@resend.dev>';
+  const toEmail = process.env.CONTACT_TO_EMAIL;
+
   if (!apiKey) {
     return res.status(500).json({ message: 'Email service not configured' });
   }
 
+  if (!toEmail) {
+    return res.status(500).json({ message: 'Recipient email not configured' });
+  }
+
   try {
     const resend = new Resend(apiKey);
-    // Sanitize all user inputs to prevent XSS
-    const sanitizedName = purify.sanitize(name, { ALLOWED_TAGS: [] });
-    const sanitizedEmail = purify.sanitize(email, { ALLOWED_TAGS: [] });
-    const sanitizedSubject = purify.sanitize(subject, { ALLOWED_TAGS: [] });
-    const sanitizedMessage = purify.sanitize(message.replace(/\n/g, '<br>'), { ALLOWED_TAGS: ['br'] });
+    const sanitizedName = sanitize(name);
+    const sanitizedEmail = sanitize(email);
+    const sanitizedSubject = sanitize(subject);
+    const sanitizedMessage = sanitize(message).replace(/\n/g, '<br>');
 
     await resend.emails.send({
-      from: 'StudyShield <onboarding@resend.dev>',
-      to: ['pa405369@gmail.com'],
+      from: fromEmail,
+      to: [toEmail],
       subject: `Contact Form: ${sanitizedSubject}`,
       html: `
         <h2>New Contact Form Submission</h2>
@@ -45,7 +61,6 @@ export default async function handler(req, res) {
 
     res.status(200).json({ message: 'Email sent successfully' });
   } catch (error) {
-    console.error('Error sending email:', error);
     res.status(500).json({ message: 'Failed to send email' });
   }
 }
