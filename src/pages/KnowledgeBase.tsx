@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
@@ -24,6 +25,7 @@ interface Document {
 
 const KnowledgeBase = () => {
   const navigate = useNavigate();
+  const { t } = useLanguage();
   const [searchQuery, setSearchQuery] = useState("");
   
   const documents = useMemo<Document[]>(() => {
@@ -86,10 +88,10 @@ const KnowledgeBase = () => {
 
   const getStatusText = (status: string) => {
     switch (status) {
-      case 'processed': return 'Ready';
-      case 'processing': return 'Processing...';
-      case 'error': return 'Error';
-      default: return 'Unknown';
+      case 'processed': return t('status.ready');
+      case 'processing': return t('status.processing');
+      case 'error': return t('status.error');
+      default: return t('status.unknown');
     }
   };
 
@@ -112,13 +114,13 @@ const KnowledgeBase = () => {
               className="glass-card hover:bg-card-glass/60"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Dashboard
+              {t('dashboard')}
             </Button>
             
             <div>
-              <h1 className="text-3xl font-bold text-foreground">Knowledge Base</h1>
+              <h1 className="text-3xl font-bold text-foreground">{t('knowledge.base')}</h1>
               <p className="text-muted-foreground mt-1">
-                Upload and manage your study materials
+                {t('knowledge.base.subtitle')}
               </p>
             </div>
           </div>
@@ -129,7 +131,7 @@ const KnowledgeBase = () => {
               className="glass-card hover:bg-card-glass/60"
             >
               <Filter className="w-4 h-4 mr-2" />
-              Filter
+              {t('filter')}
             </Button>
           </div>
         </div>
@@ -150,16 +152,16 @@ const KnowledgeBase = () => {
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 flex items-center justify-center">
                   <Upload className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Upload Study Materials</h3>
+                <h3 className="text-xl font-semibold mb-2">{t('upload.study.materials')}</h3>
                 <p className="text-muted-foreground mb-6">
-                  Drag and drop your files here, or click to browse
+                  {t('drag.drop.files')}
                 </p>
                 <Button className="btn-primary-glass">
                   <Upload className="w-4 h-4 mr-2" />
-                  Choose Files
+                  {t('choose.files')}
                 </Button>
                 <p className="text-xs text-muted-foreground mt-4">
-                  Supports PDF, DOCX, TXT, and more • Max 10MB per file
+                  {t('file.support.info')}
                 </p>
               </CardContent>
             </Card>
@@ -172,7 +174,7 @@ const KnowledgeBase = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="pl-10 glass-card bg-input/50 border-input-border/50 focus:border-primary/50 focus:ring-primary/20"
-                  placeholder="Search documents..."
+                  placeholder={t('search.documents')}
                 />
               </div>
             </div>
@@ -229,13 +231,13 @@ const KnowledgeBase = () => {
             {/* Storage Stats */}
             <Card className="glass-card border-card-border/50 bg-gradient-to-br from-card-glass/80 to-card/60 backdrop-blur-xl">
               <CardHeader>
-                <CardTitle className="text-lg">Storage Usage</CardTitle>
-                <CardDescription>Your knowledge base statistics</CardDescription>
+                <CardTitle className="text-lg">{t('storage.usage')}</CardTitle>
+                <CardDescription>{t('storage.statistics')}</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
-                    <span>Used</span>
+                    <span>{t('used')}</span>
                     <span className="font-semibold">6.7 MB / 100 MB</span>
                   </div>
                   <div className="w-full bg-muted rounded-full h-2">
@@ -246,11 +248,11 @@ const KnowledgeBase = () => {
                 <div className="grid grid-cols-2 gap-4 pt-2">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-primary">{documents.length}</div>
-                    <div className="text-xs text-muted-foreground">Documents</div>
+                    <div className="text-xs text-muted-foreground">{t('documents')}</div>
                   </div>
                   <div className="text-center">
                     <div className="text-2xl font-bold text-accent">3</div>
-                    <div className="text-xs text-muted-foreground">File Types</div>
+                    <div className="text-xs text-muted-foreground">{t('file.types')}</div>
                   </div>
                 </div>
               </CardContent>
@@ -259,7 +261,7 @@ const KnowledgeBase = () => {
             {/* Quick Actions */}
             <Card className="glass-card border-card-border/50 bg-gradient-to-br from-card-glass/80 to-card/60 backdrop-blur-xl">
               <CardHeader>
-                <CardTitle className="text-lg">Quick Actions</CardTitle>
+                <CardTitle className="text-lg">{t('quick.actions')}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <Button 
@@ -267,15 +269,15 @@ const KnowledgeBase = () => {
                   onClick={() => navigate('/chat')}
                 >
                   <FileText className="w-4 h-4 mr-2" />
-                  Ask AI about documents
+                  {t('ask.ai.documents')}
                 </Button>
                 <Button className="w-full btn-glass justify-start">
                   <Upload className="w-4 h-4 mr-2" />
-                  Bulk upload
+                  {t('bulk.upload')}
                 </Button>
                 <Button className="w-full btn-glass justify-start">
                   <Download className="w-4 h-4 mr-2" />
-                  Export all
+                  {t('export.all')}
                 </Button>
               </CardContent>
             </Card>

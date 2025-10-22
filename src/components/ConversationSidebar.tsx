@@ -287,7 +287,7 @@ const ConversationSidebar = ({
                               className={`cursor-pointer ${isDark ? 'text-gray-300 hover:bg-gray-700' : 'text-gray-700 hover:bg-gray-100'}`}
                             >
                               <Share2 className="w-4 h-4 mr-2" />
-                              Share
+                              {t('share')}
                             </DropdownMenuItem>
                             <DropdownMenuItem
                               onClick={(e) => {
@@ -297,7 +297,7 @@ const ConversationSidebar = ({
                               className={`cursor-pointer ${isDark ? 'text-gray-300 hover:bg-gray-700' : 'text-gray-700 hover:bg-gray-100'}`}
                             >
                               <PencilLine className="w-4 h-4 mr-2" />
-                              Rename
+                              {t('rename')}
                             </DropdownMenuItem>
                             <DropdownMenuItem
                               onClick={(e) => {

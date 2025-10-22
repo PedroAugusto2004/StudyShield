@@ -5,7 +5,7 @@ import { userDataService } from '@/services/userDataService';
 
 export const LanguageSync = () => {
   const { user } = useAuth();
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   const [syncStatus, setSyncStatus] = useState<'idle' | 'syncing' | 'synced' | 'error'>('idle');
 
   useEffect(() => {
@@ -33,9 +33,9 @@ export const LanguageSync = () => {
         syncStatus === 'synced' ? 'bg-green-100 text-green-800' :
         'bg-red-100 text-red-800'
       }`}>
-        {syncStatus === 'syncing' && '🔄 Syncing language...'}
-        {syncStatus === 'synced' && '✅ Language synced'}
-        {syncStatus === 'error' && '❌ Sync failed'}
+        {syncStatus === 'syncing' && t('syncing.language')}
+        {syncStatus === 'synced' && t('language.synced')}
+        {syncStatus === 'error' && t('sync.failed')}
       </div>
     </div>
   );

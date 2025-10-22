@@ -116,7 +116,7 @@ export const useConversations = () => {
   const createNewConversation = (): Conversation => {
     const newConv: Conversation = {
       id: crypto.randomUUID(),
-      title: 'New Conversation',
+      title: 'New Conversation', // This will be replaced by the first message
       lastMessage: '',
       timestamp: new Date(),
       messages: [],

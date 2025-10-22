@@ -1329,7 +1329,7 @@ const Chat = () => {
               className={`flex items-center gap-2 rounded-full p-2.5 sm:px-3 sm:py-2 backdrop-blur-md ${isDark ? 'bg-black/30 text-white hover:bg-gray-800/50' : 'bg-white/30 text-black hover:bg-gray-100/50 hover:text-black'} transition-all duration-200`}
             >
               <Upload className="w-4 h-4" />
-              <span className="text-sm font-medium hidden sm:inline">Share</span>
+              <span className="text-sm font-medium hidden sm:inline">{t('share')}</span>
             </Button>
           </div>
         )}

@@ -68,7 +68,7 @@ export const ShareModal = ({ isOpen, onClose, conversationTitle, firstMessage, s
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
                   <div className={`text-sm font-medium ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                    You
+                    {t('you')}
                   </div>
                 </div>
                 <p className={`text-sm leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
@@ -98,18 +98,18 @@ export const ShareModal = ({ isOpen, onClose, conversationTitle, firstMessage, s
               {copied ? (
                 <>
                   <Check className="w-5 h-5" />
-                  <span>Link Copied!</span>
+                  <span>{t('link.copied')}</span>
                 </>
               ) : (
                 <>
                   <LinkIcon className="w-5 h-5" />
-                  <span>Copy Link</span>
+                  <span>{t('copy.link')}</span>
                 </>
               )}
             </Button>
 
             <p className={`text-xs text-center ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>
-              Only users with a StudyShield account can view this conversation
+              {t('share.restriction')}
             </p>
           </div>
         </div>

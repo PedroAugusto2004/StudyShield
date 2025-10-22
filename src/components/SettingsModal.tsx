@@ -56,12 +56,12 @@ const SettingsModal = ({ isOpen, onClose, initialTab = 'general' }: SettingsModa
   const [activeTab, setActiveTab] = useState(initialTab);
   
   const [profile, setProfile] = useState({
-    name: sanitizeInput(localStorage.getItem('userName') || "User"),
+    name: sanitizeInput(localStorage.getItem('userName') || t('user.default')),
     photo: localStorage.getItem('userPhoto') || null
   });
   
   const [formState, setFormState] = useState({
-    tempName: sanitizeInput(localStorage.getItem('userName') || "User"),
+    tempName: sanitizeInput(localStorage.getItem('userName') || t('user.default')),
     nameChanged: false,
     goals: sanitizeInput(localStorage.getItem('userGoals') || ''),
     tempGoals: sanitizeInput(localStorage.getItem('userGoals') || ''),
@@ -514,7 +514,7 @@ const SettingsModal = ({ isOpen, onClose, initialTab = 'general' }: SettingsModa
                 <div className="space-y-3">
                   <div>
                     <Label className={`text-sm font-medium ${isDark ? 'text-white' : 'text-black'}`}>{t('more.about.you')}</Label>
-                    <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{t('more.about.you.description')} You can also tell the AI how it should behave and respond to help you better.</p>
+                    <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{t('more.about.you.description')}</p>
                   </div>
                   <Textarea
                     value={formState.tempGoals}
