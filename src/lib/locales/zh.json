@@ -437,5 +437,17 @@
   "deleting": "删除中...",
   "delete.permanently": "永久删除",
   "account.deleted": "账户已删除",
-  "account.deleted.description": "您的账户已被永久删除。"
+  "account.deleted.description": "您的账户已被永久删除。",
+  "study.quadratic": "二次方程",
+  "study.derivatives": "导数",
+  "study.pythagorean": "勾股定理",
+  "study.photosynthesis": "光合作用",
+  "study.newton": "牛顿定律",
+  "study.dna": "DNA结构",
+  "study.wwii": "第二次世界大战",
+  "study.french.revolution": "法国大革命",
+  "study.shakespeare": "莎士比亚",
+  "study.periodic.table": "元素周期表",
+  "study.schedule": "学习计划",
+  "study.essay": "写论文"
 }

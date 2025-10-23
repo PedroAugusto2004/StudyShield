@@ -353,7 +353,7 @@
   "study.reminders.description": "Get notified to maintain your study streak",
   "more.about.you": "More about you",
   "more.about.you.description": "Tell the AI about your goals and what you want to achieve for better personalized responses. You can also tell the AI how it should behave and respond to help you better.",
-  "goals.placeholder": "e.g., I\\",
+  "goals.placeholder": "e.g., I'm studying computer science and want to improve my programming skills. I prefer detailed explanations with examples.",
   "confirm": "Confirm",
   "logout.device": "Log out of this device",
   "logout.all": "Log out of all devices",
@@ -434,5 +434,17 @@
   "you": "You",
   "link.copied": "Link Copied!",
   "copy.link": "Copy Link",
-  "share.restriction": "Only users with a StudyShield account can view this conversation"
+  "share.restriction": "Only users with a StudyShield account can view this conversation",
+  "study.quadratic": "Solve quadratic equations",
+  "study.derivatives": "Calculate derivatives",
+  "study.pythagorean": "Pythagorean theorem",
+  "study.photosynthesis": "Explain photosynthesis",
+  "study.newton": "Newton's laws",
+  "study.dna": "DNA structure",
+  "study.wwii": "Causes of WWII",
+  "study.french.revolution": "French Revolution",
+  "study.shakespeare": "Shakespeare themes",
+  "study.periodic.table": "Memorize periodic table",
+  "study.schedule": "Study schedule",
+  "study.essay": "Essay writing tips"
 }

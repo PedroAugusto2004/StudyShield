@@ -437,5 +437,17 @@
   "deleting": "削除中...",
   "delete.permanently": "完全に削除",
   "account.deleted": "アカウントが削除されました",
-  "account.deleted.description": "アカウントが完全に削除されました。"
+  "account.deleted.description": "アカウントが完全に削除されました。",
+  "study.quadratic": "二次方程式",
+  "study.derivatives": "微分",
+  "study.pythagorean": "ピタゴラスの定理",
+  "study.photosynthesis": "光合成",
+  "study.newton": "ニュートンの法則",
+  "study.dna": "DNA構造",
+  "study.wwii": "第二次世界大戦",
+  "study.french.revolution": "フランス革命",
+  "study.shakespeare": "シェイクスピア",
+  "study.periodic.table": "元素周期表",
+  "study.schedule": "学習スケジュール",
+  "study.essay": "エッセイを書く"
 }

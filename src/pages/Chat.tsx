@@ -43,7 +43,19 @@ import {
   Globe,
   Cpu,
   HelpCircle,
-  Upload
+  Upload,
+  Calculator,
+  Lightbulb,
+  BookOpen,
+  Calendar,
+  Sigma,
+  Triangle,
+  Landmark,
+  ScrollText,
+  Brain,
+  GraduationCap,
+  FileText,
+  Target
 } from "lucide-react";
 import { aiService, type AIMode } from "@/services/aiService";
 import { geminiService, type ChatMessage as GeminiChatMessage } from "@/services/geminiService";
@@ -199,6 +211,28 @@ const Chat = () => {
   const generationAbortRef = useRef<AbortController | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const { smoothScrollToBottom } = useSmoothScroll();
+
+  const studyQuestions = [
+    { icon: Calculator, labelKey: 'study.quadratic', question: 'How do I solve quadratic equations?' },
+    { icon: Sigma, labelKey: 'study.derivatives', question: 'How do I calculate derivatives in calculus?' },
+    { icon: Triangle, labelKey: 'study.pythagorean', question: 'Explain the Pythagorean theorem with examples' },
+    { icon: Lightbulb, labelKey: 'study.photosynthesis', question: 'Explain photosynthesis in simple terms' },
+    { icon: Brain, labelKey: 'study.newton', question: 'What are Newton\'s three laws of motion?' },
+    { icon: Target, labelKey: 'study.dna', question: 'Explain the structure of DNA' },
+    { icon: Landmark, labelKey: 'study.wwii', question: 'What are the main causes of World War II?' },
+    { icon: BookOpen, labelKey: 'study.french.revolution', question: 'Summarize the French Revolution' },
+    { icon: ScrollText, labelKey: 'study.shakespeare', question: 'What are the main themes in Shakespeare\'s Hamlet?' },
+    { icon: GraduationCap, labelKey: 'study.periodic.table', question: 'Help me memorize the periodic table' },
+    { icon: Calendar, labelKey: 'study.schedule', question: 'Create an effective study schedule for exams' },
+    { icon: FileText, labelKey: 'study.essay', question: 'Give me tips for writing a strong essay' }
+  ];
+
+  const [randomQuestions, setRandomQuestions] = useState<typeof studyQuestions>([]);
+
+  useEffect(() => {
+    const shuffled = [...studyQuestions].sort(() => Math.random() - 0.5);
+    setRandomQuestions(shuffled.slice(0, 4));
+  }, [currentConversationId]);
 
   const renderMarkdownContent = (content: string) => {
     // Split content into sections
@@ -797,8 +831,8 @@ const Chat = () => {
     return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
   }, [currentConversationId, getCurrentConversation]);
 
-  const handleSendMessage = async () => {
-    const trimmedInput = inputValue.trim();
+  const handleSendMessage = async (messageOverride?: string) => {
+    const trimmedInput = (messageOverride || inputValue).trim();
     if ((!trimmedInput && attachedFiles.length === 0) || isTyping) return;
 
     // Hide offline hint after first message
@@ -1362,8 +1396,32 @@ const Chat = () => {
               }`}
             >
               {message.type === 'greeting' ? (
-                <div className="flex items-center justify-center min-h-[50vh] sm:min-h-[60vh] px-4">
+                <div className="flex flex-col items-center justify-center min-h-[50vh] sm:min-h-[60vh] px-4 gap-6">
                   <h2 className={`text-2xl sm:text-4xl font-semibold ${isDark ? 'text-white' : 'text-gray-800'} text-center animate-fade-in`}>{message.content}</h2>
+                  
+                  {/* Study Shortcuts */}
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 w-full max-w-2xl animate-fade-in">
+                    {randomQuestions.map((q, idx) => {
+                      const Icon = q.icon;
+                      return (
+                        <button
+                          key={idx}
+                          onClick={() => {
+                            if (isTyping) return;
+                            handleSendMessage(q.question);
+                          }}
+                          className={`p-3 rounded-lg border transition-all duration-200 hover:scale-105 flex flex-col items-center gap-2 ${
+                            isDark 
+                              ? 'bg-black border-gray-700 hover:border-blue-500 text-white' 
+                              : 'bg-white border-gray-200 hover:border-blue-500 text-gray-900'
+                          }`}
+                        >
+                          <Icon className="w-5 h-5" />
+                          <span className="text-xs font-medium text-center">{t(q.labelKey)}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
               ) : (
                 <div className={`flex gap-2 sm:gap-3 max-w-xs sm:max-w-2xl ${message.type === 'user' ? 'flex-row-reverse' : ''}`}>

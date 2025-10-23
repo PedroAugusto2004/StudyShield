@@ -156,7 +156,7 @@
   "study.reminders.description": "Recevez des notifications pour maintenir votre série d\\",
   "more.about.you": "Plus sur vous",
   "more.about.you.description": "Parlez à l'IA de vos objectifs et de ce que vous voulez accomplir pour de meilleures réponses personnalisées. Vous pouvez également dire à l'IA comment elle doit se comporter et répondre pour mieux vous aider.",
-  "goals.placeholder": "ex., J\\",
+  "goals.placeholder": "ex., J'étudie l'informatique et je veux améliorer mes compétences en programmation. Je préfère des explications détaillées avec des exemples.",
   "confirm": "Confirmer",
   "logout.device": "Se déconnecter de cet appareil",
   "logout.all": "Se déconnecter de tous les appareils",
@@ -438,5 +438,17 @@
   "deleting": "Suppression...",
   "delete.permanently": "Supprimer Définitivement",
   "account.deleted": "Compte supprimé",
-  "account.deleted.description": "Votre compte a été supprimé définitivement."
+  "account.deleted.description": "Votre compte a été supprimé définitivement.",
+  "study.quadratic": "Équation Quadratique",
+  "study.derivatives": "Dérivées",
+  "study.pythagorean": "Théorème de Pythagore",
+  "study.photosynthesis": "Photosynthèse",
+  "study.newton": "Lois de Newton",
+  "study.dna": "Structure de l'ADN",
+  "study.wwii": "Seconde Guerre Mondiale",
+  "study.french.revolution": "Révolution Française",
+  "study.shakespeare": "Shakespeare",
+  "study.periodic.table": "Tableau Périodique",
+  "study.schedule": "Horaire d'Étude",
+  "study.essay": "Écrire un Essai"
 }

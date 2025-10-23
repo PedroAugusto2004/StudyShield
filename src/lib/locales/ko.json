@@ -437,5 +437,17 @@
   "deleting": "삭제 중...",
   "delete.permanently": "영구적으로 삭제",
   "account.deleted": "계정이 삭제되었습니다",
-  "account.deleted.description": "계정이 영구적으로 삭제되었습니다."
+  "account.deleted.description": "계정이 영구적으로 삭제되었습니다.",
+  "study.quadratic": "이차 방정식",
+  "study.derivatives": "미분",
+  "study.pythagorean": "피타고라스 정리",
+  "study.photosynthesis": "광합성",
+  "study.newton": "뉴턴의 법칙",
+  "study.dna": "DNA 구조",
+  "study.wwii": "제2차 세계대전",
+  "study.french.revolution": "프랑스 혁명",
+  "study.shakespeare": "셰익스피어",
+  "study.periodic.table": "주기율표",
+  "study.schedule": "학습 일정",
+  "study.essay": "에세이 쓰기"
 }

@@ -440,5 +440,17 @@
   "deleting": "Eliminando...",
   "delete.permanently": "Eliminar Permanentemente",
   "account.deleted": "Cuenta eliminada",
-  "account.deleted.description": "Su cuenta ha sido eliminada permanentemente."
+  "account.deleted.description": "Su cuenta ha sido eliminada permanentemente.",
+  "study.quadratic": "Ecuación Cuadrática",
+  "study.derivatives": "Derivadas",
+  "study.pythagorean": "Teorema de Pitágoras",
+  "study.photosynthesis": "Fotosíntesis",
+  "study.newton": "Leyes de Newton",
+  "study.dna": "Estructura del ADN",
+  "study.wwii": "Segunda Guerra Mundial",
+  "study.french.revolution": "Revolución Francesa",
+  "study.shakespeare": "Shakespeare",
+  "study.periodic.table": "Tabla Periódica",
+  "study.schedule": "Horario de Estudio",
+  "study.essay": "Escribir Ensayo"
 }
