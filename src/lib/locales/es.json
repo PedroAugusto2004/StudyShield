@@ -452,5 +452,17 @@
   "study.shakespeare": "Shakespeare",
   "study.periodic.table": "Tabla Periódica",
   "study.schedule": "Horario de Estudio",
-  "study.essay": "Escribir Ensayo"
+  "study.essay": "Escribir Ensayo",
+  "study.quadratic.question": "¿Cómo resuelvo ecuaciones cuadráticas?",
+  "study.derivatives.question": "¿Cómo calculo derivadas en cálculo?",
+  "study.pythagorean.question": "Explica el teorema de Pitágoras con ejemplos",
+  "study.photosynthesis.question": "Explica la fotosíntesis en términos simples",
+  "study.newton.question": "¿Cuáles son las tres leyes del movimiento de Newton?",
+  "study.dna.question": "Explica la estructura del ADN",
+  "study.wwii.question": "¿Cuáles son las principales causas de la Segunda Guerra Mundial?",
+  "study.french.revolution.question": "Resume la Revolución Francesa",
+  "study.shakespeare.question": "¿Cuáles son los temas principales en Hamlet de Shakespeare?",
+  "study.periodic.table.question": "Ayúdame a memorizar la tabla periódica",
+  "study.schedule.question": "Crea un horario de estudio efectivo para exámenes",
+  "study.essay.question": "Dame consejos para escribir un ensayo sólido"
 }

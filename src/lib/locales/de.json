@@ -450,5 +450,17 @@
   "study.shakespeare": "Shakespeare",
   "study.periodic.table": "Periodensystem",
   "study.schedule": "Lernplan",
-  "study.essay": "Aufsatz Schreiben"
+  "study.essay": "Aufsatz Schreiben",
+  "study.quadratic.question": "Wie löse ich quadratische Gleichungen?",
+  "study.derivatives.question": "Wie berechne ich Ableitungen in der Analysis?",
+  "study.pythagorean.question": "Erklären Sie den Satz des Pythagoras mit Beispielen",
+  "study.photosynthesis.question": "Erklären Sie die Photosynthese in einfachen Worten",
+  "study.newton.question": "Was sind Newtons drei Bewegungsgesetze?",
+  "study.dna.question": "Erklären Sie die Struktur der DNA",
+  "study.wwii.question": "Was sind die Hauptursachen des Zweiten Weltkriegs?",
+  "study.french.revolution.question": "Fassen Sie die Französische Revolution zusammen",
+  "study.shakespeare.question": "Was sind die Hauptthemen in Shakespeares Hamlet?",
+  "study.periodic.table.question": "Helfen Sie mir, das Periodensystem auswendig zu lernen",
+  "study.schedule.question": "Erstellen Sie einen effektiven Lernplan für Prüfungen",
+  "study.essay.question": "Geben Sie mir Tipps zum Schreiben eines starken Aufsatzes"
 }

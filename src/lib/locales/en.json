@@ -299,6 +299,7 @@
   "welcome.back.user": "Welcome back",
   "ready.to.learn": "Ready to learn",
   "good.to.see.again": "Good to see you again",
+  "continue.studying": "Let's continue studying",
   "stop.generating": "Stop generating",
   "send.message": "Send message",
   "loading.conversations": "Loading your conversations...",
@@ -446,5 +447,17 @@
   "study.shakespeare": "Shakespeare themes",
   "study.periodic.table": "Memorize periodic table",
   "study.schedule": "Study schedule",
-  "study.essay": "Essay writing tips"
+  "study.essay": "Essay writing tips",
+  "study.quadratic.question": "How do I solve quadratic equations?",
+  "study.derivatives.question": "How do I calculate derivatives in calculus?",
+  "study.pythagorean.question": "Explain the Pythagorean theorem with examples",
+  "study.photosynthesis.question": "Explain photosynthesis in simple terms",
+  "study.newton.question": "What are Newton's three laws of motion?",
+  "study.dna.question": "Explain the structure of DNA",
+  "study.wwii.question": "What are the main causes of World War II?",
+  "study.french.revolution.question": "Summarize the French Revolution",
+  "study.shakespeare.question": "What are the main themes in Shakespeare's Hamlet?",
+  "study.periodic.table.question": "Help me memorize the periodic table",
+  "study.schedule.question": "Create an effective study schedule for exams",
+  "study.essay.question": "Give me tips for writing a strong essay"
 }

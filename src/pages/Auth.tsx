@@ -303,7 +303,6 @@ const Auth = () => {
 
                   <Button
                     type="button"
-                    variant="outline"
                     disabled={loading}
                     onClick={async () => {
                       setLoading(true);
@@ -321,7 +320,7 @@ const Auth = () => {
                         setLoading(false);
                       }
                     }}
-                    className="w-full py-3 font-semibold rounded-xl bg-white backdrop-blur-sm border-[3px] border-gray-500/60 text-gray-700 hover:bg-white hover:border-gray-500/60 hover:text-gray-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full py-3 font-semibold rounded-xl bg-white backdrop-blur-sm text-gray-700 hover:bg-white hover:text-gray-700 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.3)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24">
                       <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>

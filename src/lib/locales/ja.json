@@ -449,5 +449,17 @@
   "study.shakespeare": "シェイクスピア",
   "study.periodic.table": "元素周期表",
   "study.schedule": "学習スケジュール",
-  "study.essay": "エッセイを書く"
+  "study.essay": "エッセイを書く",
+  "study.quadratic.question": "二次方程式をどう解きますか？",
+  "study.derivatives.question": "微積分で微分をどう計算しますか？",
+  "study.pythagorean.question": "ピタゴラスの定理を例を使って説明してください",
+  "study.photosynthesis.question": "光合成を簡単な言葉で説明してください",
+  "study.newton.question": "ニュートンの三つの運動法則は何ですか？",
+  "study.dna.question": "DNAの構造を説明してください",
+  "study.wwii.question": "第二次世界大戦の主な原因は何ですか？",
+  "study.french.revolution.question": "フランス革命を要約してください",
+  "study.shakespeare.question": "シェイクスピアのハムレットの主なテーマは何ですか？",
+  "study.periodic.table.question": "元素周期表を記憶するのを手伝ってください",
+  "study.schedule.question": "試験のための効果的な学習スケジュールを作成してください",
+  "study.essay.question": "強力なエッセイを書くためのヒントをください"
 }

@@ -449,5 +449,17 @@
   "study.shakespeare": "莎士比亚",
   "study.periodic.table": "元素周期表",
   "study.schedule": "学习计划",
-  "study.essay": "写论文"
+  "study.essay": "写论文",
+  "study.quadratic.question": "我如何解二次方程？",
+  "study.derivatives.question": "我如何计算微积分中的导数？",
+  "study.pythagorean.question": "用例子解释勾股定理",
+  "study.photosynthesis.question": "用简单的词语解释光合作用",
+  "study.newton.question": "牛顿的三大运动定律是什么？",
+  "study.dna.question": "解释DNA的结构",
+  "study.wwii.question": "第二次世界大战的主要原因是什么？",
+  "study.french.revolution.question": "总结法国大革命",
+  "study.shakespeare.question": "莎士比亚《哈姆雷特》的主题是什么？",
+  "study.periodic.table.question": "帮我记忆元素周期表",
+  "study.schedule.question": "为考试制定有效的学习计划",
+  "study.essay.question": "给我写作强有力论文的技巧"
 }

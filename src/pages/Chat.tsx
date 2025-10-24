@@ -213,18 +213,18 @@ const Chat = () => {
   const { smoothScrollToBottom } = useSmoothScroll();
 
   const studyQuestions = [
-    { icon: Calculator, labelKey: 'study.quadratic', question: 'How do I solve quadratic equations?' },
-    { icon: Sigma, labelKey: 'study.derivatives', question: 'How do I calculate derivatives in calculus?' },
-    { icon: Triangle, labelKey: 'study.pythagorean', question: 'Explain the Pythagorean theorem with examples' },
-    { icon: Lightbulb, labelKey: 'study.photosynthesis', question: 'Explain photosynthesis in simple terms' },
-    { icon: Brain, labelKey: 'study.newton', question: 'What are Newton\'s three laws of motion?' },
-    { icon: Target, labelKey: 'study.dna', question: 'Explain the structure of DNA' },
-    { icon: Landmark, labelKey: 'study.wwii', question: 'What are the main causes of World War II?' },
-    { icon: BookOpen, labelKey: 'study.french.revolution', question: 'Summarize the French Revolution' },
-    { icon: ScrollText, labelKey: 'study.shakespeare', question: 'What are the main themes in Shakespeare\'s Hamlet?' },
-    { icon: GraduationCap, labelKey: 'study.periodic.table', question: 'Help me memorize the periodic table' },
-    { icon: Calendar, labelKey: 'study.schedule', question: 'Create an effective study schedule for exams' },
-    { icon: FileText, labelKey: 'study.essay', question: 'Give me tips for writing a strong essay' }
+    { icon: Calculator, labelKey: 'study.quadratic', questionKey: 'study.quadratic.question' },
+    { icon: Sigma, labelKey: 'study.derivatives', questionKey: 'study.derivatives.question' },
+    { icon: Triangle, labelKey: 'study.pythagorean', questionKey: 'study.pythagorean.question' },
+    { icon: Lightbulb, labelKey: 'study.photosynthesis', questionKey: 'study.photosynthesis.question' },
+    { icon: Brain, labelKey: 'study.newton', questionKey: 'study.newton.question' },
+    { icon: Target, labelKey: 'study.dna', questionKey: 'study.dna.question' },
+    { icon: Landmark, labelKey: 'study.wwii', questionKey: 'study.wwii.question' },
+    { icon: BookOpen, labelKey: 'study.french.revolution', questionKey: 'study.french.revolution.question' },
+    { icon: ScrollText, labelKey: 'study.shakespeare', questionKey: 'study.shakespeare.question' },
+    { icon: GraduationCap, labelKey: 'study.periodic.table', questionKey: 'study.periodic.table.question' },
+    { icon: Calendar, labelKey: 'study.schedule', questionKey: 'study.schedule.question' },
+    { icon: FileText, labelKey: 'study.essay', questionKey: 'study.essay.question' }
   ];
 
   const [randomQuestions, setRandomQuestions] = useState<typeof studyQuestions>([]);
@@ -1408,7 +1408,7 @@ const Chat = () => {
                           key={idx}
                           onClick={() => {
                             if (isTyping) return;
-                            handleSendMessage(q.question);
+                            handleSendMessage(t(q.questionKey));
                           }}
                           className={`p-3 rounded-lg border transition-all duration-200 hover:scale-105 flex flex-col items-center gap-2 ${
                             isDark 
