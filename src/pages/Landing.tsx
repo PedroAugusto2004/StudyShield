@@ -90,9 +90,9 @@ const Landing = () => {
   
   // Chart data
   const chartData = {
-    chart1: [{v:20},{v:35},{v:50},{v:65},{v:73}],
-    chart2: [{v:15},{v:25},{v:32},{v:40},{v:45}],
-    chart3: [{v:1.2},{v:1.6},{v:2.0},{v:2.3},{v:2.5}]
+    chart1: [{v:20},{v:35},{v:50},{v:65},{v:77}],
+    chart2: [{v:15},{v:30},{v:45},{v:55},{v:60}],
+    chart3: [{v:5},{v:10},{v:15},{v:18},{v:20}]
   };
 
   const containerVariants = {
@@ -470,25 +470,25 @@ const Landing = () => {
                       maxBarSize={40}
                     >
                       <defs>
-                        <linearGradient id="gradient73" x1="0" y1="0" x2="0" y2="1">
+                        <linearGradient id="gradient77" x1="0" y1="0" x2="0" y2="1">
                           <stop offset="0%" stopColor="#dc2626" stopOpacity={1}/>
                           <stop offset="50%" stopColor="#ef4444" stopOpacity={0.8}/>
                           <stop offset="100%" stopColor="#f87171" stopOpacity={0.6}/>
                         </linearGradient>
-                        <filter id="shadow73">
+                        <filter id="shadow77">
                           <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#dc2626" floodOpacity="0.3"/>
                         </filter>
                       </defs>
-                      <Bar dataKey="v" fill="url(#gradient73)" radius={[8, 8, 0, 0]} animationDuration={1500} isAnimationActive={chartAnimations.chart1} animationBegin={0} filter="url(#shadow73)" />
+                      <Bar dataKey="v" fill="url(#gradient77)" radius={[8, 8, 0, 0]} animationDuration={1500} isAnimationActive={chartAnimations.chart1} animationBegin={0} filter="url(#shadow77)" />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
                 <div>
-                  <h3 className="font-black text-gray-900 mb-2 text-2xl"><NumberCounter end={73} suffix="%" duration={2500} /></h3>
+                  <h3 className="font-black text-gray-900 mb-2 text-2xl"><NumberCounter end={77} suffix="%" duration={2500} /></h3>
                   <h4 className="font-bold text-gray-800 mb-3 text-lg">{t('distracted.students')}</h4>
                   <p className="text-gray-600 text-sm mb-4 leading-relaxed">{t('distracted.students.stat')}</p>
-                  <a href="https://www.pewresearch.org/internet/2022/08/10/teens-social-media-and-technology-2022/" target="_blank" rel="noopener noreferrer" className="text-xs text-red-600 hover:text-red-700 font-medium underline">
-                    {t('source.pew.research')}
+                  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9684974/" target="_blank" rel="noopener noreferrer" className="text-xs text-red-600 hover:text-red-700 font-medium underline">
+                    {t('source.ncbi')}
                   </a>
                 </div>
               </div>
@@ -510,25 +510,25 @@ const Landing = () => {
                       maxBarSize={40}
                     >
                       <defs>
-                        <linearGradient id="gradient45" x1="0" y1="0" x2="0" y2="1">
+                        <linearGradient id="gradient60" x1="0" y1="0" x2="0" y2="1">
                           <stop offset="0%" stopColor="#ea580c" stopOpacity={1}/>
                           <stop offset="50%" stopColor="#f97316" stopOpacity={0.8}/>
                           <stop offset="100%" stopColor="#fb923c" stopOpacity={0.6}/>
                         </linearGradient>
-                        <filter id="shadow45">
+                        <filter id="shadow60">
                           <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#ea580c" floodOpacity="0.3"/>
                         </filter>
                       </defs>
-                      <Bar dataKey="v" fill="url(#gradient45)" radius={[8, 8, 0, 0]} animationDuration={1500} isAnimationActive={chartAnimations.chart2} animationBegin={0} filter="url(#shadow45)" />
+                      <Bar dataKey="v" fill="url(#gradient60)" radius={[8, 8, 0, 0]} animationDuration={1500} isAnimationActive={chartAnimations.chart2} animationBegin={0} filter="url(#shadow60)" />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
                 <div>
-                  <h3 className="font-black text-gray-900 mb-2 text-2xl"><NumberCounter end={45} suffix="%" duration={2500} /></h3>
+                  <h3 className="font-black text-gray-900 mb-2 text-2xl"><NumberCounter end={60} suffix="%" duration={2500} /></h3>
                   <h4 className="font-bold text-gray-800 mb-3 text-lg">{t('information.overload')}</h4>
                   <p className="text-gray-600 text-sm mb-4 leading-relaxed">{t('information.overload.stat')}</p>
-                  <a href="https://www.apa.org/science/about/psa/2017/10/information-overload" target="_blank" rel="noopener noreferrer" className="text-xs text-orange-600 hover:text-orange-700 font-medium underline">
-                    {t('source.apa')}
+                  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6024260/" target="_blank" rel="noopener noreferrer" className="text-xs text-orange-600 hover:text-orange-700 font-medium underline">
+                    {t('source.ncbi')}
                   </a>
                 </div>
               </div>
@@ -550,24 +550,24 @@ const Landing = () => {
                       maxBarSize={40}
                     >
                       <defs>
-                        <linearGradient id="gradient25" x1="0" y1="0" x2="0" y2="1">
+                        <linearGradient id="gradient20" x1="0" y1="0" x2="0" y2="1">
                           <stop offset="0%" stopColor="#2563eb" stopOpacity={1}/>
                           <stop offset="50%" stopColor="#3b82f6" stopOpacity={0.8}/>
                           <stop offset="100%" stopColor="#60a5fa" stopOpacity={0.6}/>
                         </linearGradient>
-                        <filter id="shadow25">
+                        <filter id="shadow20">
                           <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#2563eb" floodOpacity="0.3"/>
                         </filter>
                       </defs>
-                      <Bar dataKey="v" fill="url(#gradient25)" radius={[8, 8, 0, 0]} animationDuration={1500} isAnimationActive={chartAnimations.chart3} animationBegin={0} filter="url(#shadow25)" />
+                      <Bar dataKey="v" fill="url(#gradient20)" radius={[8, 8, 0, 0]} animationDuration={1500} isAnimationActive={chartAnimations.chart3} animationBegin={0} filter="url(#shadow20)" />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
                 <div>
-                  <h3 className="font-black text-gray-900 mb-2 text-2xl"><NumberCounter end={2.5} suffix="x" decimals={1} duration={2500} /></h3>
+                  <h3 className="font-black text-gray-900 mb-2 text-2xl"><NumberCounter end={20} suffix="%" duration={2500} /></h3>
                   <h4 className="font-bold text-gray-800 mb-3 text-lg">{t('longer.study.time')}</h4>
                   <p className="text-gray-600 text-sm mb-4 leading-relaxed">{t('longer.study.time.stat')}</p>
-                  <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4927578/" target="_blank" rel="noopener noreferrer" className="text-xs text-blue-600 hover:text-blue-700 font-medium underline">
+                  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8108503/" target="_blank" rel="noopener noreferrer" className="text-xs text-blue-600 hover:text-blue-700 font-medium underline">
                     {t('source.ncbi')}
                   </a>
                 </div>
