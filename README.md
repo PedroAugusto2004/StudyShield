@@ -9,6 +9,12 @@
 
 > **The Ultimate AI-Powered Study Assistant** - Transform your learning experience with intelligent content filtering, distraction blocking, and personalized AI tutoring powered by Google's Gemini AI.
 
+## 🎥 Video Presentation
+
+[![Watch the Demo](https://img.shields.io/badge/YouTube-Watch%20Demo-red?style=for-the-badge&logo=youtube)](https://youtu.be/YTu14V1s3Vc?si=b1ylBmFhfbxt7FDg)
+
+**[📺 Watch the Full Presentation on YouTube](https://youtu.be/YTu14V1s3Vc?si=b1ylBmFhfbxt7FDg)**
+
 ## 🌟 Overview
 
 StudyShield is a revolutionary Progressive Web Application (PWA) that combines cutting-edge AI technology with advanced study tools to create the ultimate learning environment. Built with modern web technologies and powered by Google's Gemini AI, StudyShield provides intelligent content filtering, distraction blocking, and personalized tutoring to help students, professionals, educators, and parents achieve their learning goals.
