@@ -194,7 +194,7 @@ const SettingsModal = ({ isOpen, onClose, initialTab = 'general' }: SettingsModa
     }
     try {
       const { supabase } = await import('@/integrations/supabase/client');
-      await supabase.auth.admin.signOut(user?.id || '', 'global');
+      await supabase.auth.signOut({ scope: 'global' });
       window.location.href = '/';
     } catch (error) {
       toast({ title: t('error'), description: t('logout.failed'), variant: "destructive" });
