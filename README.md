@@ -210,8 +210,8 @@ StudyShield/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/PedroAugusto2004/studyshield.git
-   cd studyshield
+   git clone https://github.com/PedroAugusto2004/StudyShield.git
+   cd StudyShield
    ```
 
 2. **Install dependencies**
@@ -289,8 +289,8 @@ npm --version   # Should be 9.0.0+
 #### Quick Setup (5 minutes)
 ```bash
 # 1. Clone the repository
-git clone https://github.com/PedroAugusto2004/studyshield.git
-cd studyshield
+git clone https://github.com/PedroAugusto2004/StudyShield.git
+cd StudyShield
 
 # 2. Install dependencies
 npm install
@@ -578,7 +578,7 @@ We welcome contributions from the community! Here's how you can help:
 
 1. **Fork the Repository**
    ```bash
-   git fork https://github.com/PedroAugusto2004/studyshield.git
+   git fork https://github.com/PedroAugusto2004/StudyShield.git
    ```
 
 2. **Create Feature Branch**
@@ -804,6 +804,6 @@ SOFTWARE.
 
 **Made with ❤️ by the StudyShield Team**
 
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/PedroAugusto2004/studyshield)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/PedroAugusto2004/StudyShield)
 
 </div>
