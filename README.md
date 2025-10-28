@@ -11,7 +11,11 @@
 
 ## 🎥 Video Presentation
 
-[![StudyShield Demo](https://raw.githubusercontent.com/PedroAugusto2004/studyshield/main/public/studyshield-cover.png?v=3)](https://youtu.be/YTu14V1s3Vc?si=b1ylBmFhfbxt7FDg)
+<div align="center">
+  <a href="https://youtu.be/YTu14V1s3Vc?si=b1ylBmFhfbxt7FDg">
+    <img src="https://raw.githubusercontent.com/PedroAugusto2004/studyshield/main/public/studyshield-cover.png?v=4" alt="StudyShield Demo" width="600" />
+  </a>
+</div>
 
 **[📺 Watch the Full Presentation on YouTube](https://youtu.be/YTu14V1s3Vc?si=b1ylBmFhfbxt7FDg)**
 
@@ -109,10 +113,10 @@ Experience the full power of StudyShield with our live demo. No installation req
 </div>
 
 ### AI Chat Interface
-<p align="center">
+<div align="center">
   <img src="https://raw.githubusercontent.com/PedroAugusto2004/studyshield/main/public/studyshield-laptop.png?v=2" alt="StudyShield on Laptop" height="400" />
-  <img src="https://raw.githubusercontent.com/PedroAugusto2004/studyshield/main/public/studyshield-phone.png?v=2" alt="StudyShield on Phone" height="300" />
-</p>
+  <img src="https://raw.githubusercontent.com/PedroAugusto2004/studyshield/main/public/studyshield-phone.png?v=3" alt="StudyShield on Phone" height="300" />
+</div>
 
 ### Settings & Personalization
 <div align="center">
