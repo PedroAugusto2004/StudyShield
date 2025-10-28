@@ -7,13 +7,13 @@
 [![Supabase](https://img.shields.io/badge/Supabase-2.57.4-green.svg)](https://supabase.com/)
 [![Google AI](https://img.shields.io/badge/Google%20AI-Gemini-orange.svg)](https://ai.google.dev/)
 
-> **The Ultimate AI-Powered Study Assistant** - Transform your learning experience with intelligent content filtering, distraction blocking, and personalized AI tutoring powered by Google's Gemini AI.
+> **The Ultimate AI-Powered Study Assistant** - Transform your learning experience with intelligent content filtering, distraction blocking, and personalized AI tutoring powered by Google's Gemini AI, featuring groundbreaking **on-device AI with Gemini Nano**.
 
 ## 🎥 Video Presentation
 
-[![Watch the Demo](https://img.shields.io/badge/YouTube-Watch%20Demo-red?style=for-the-badge&logo=youtube)](https://youtu.be/YTu14V1s3Vc?si=b1ylBmFhfbxt7FDg)
+[![Watch the Demo](https://img.youtube.com/vi/YTu14V1s3Vc/maxresdefault.jpg)](https://youtu.be/YTu14V1s3Vc?si=b1ylBmFhfbxt7FDg)
 
-**[📺 Watch the Full Presentation on YouTube](https://youtu.be/YTu14V1s3Vc?si=b1ylBmFhfbxt7FDg)**
+**[📺 Click to Watch the Full Presentation on YouTube](https://youtu.be/YTu14V1s3Vc?si=b1ylBmFhfbxt7FDg)**
 
 ## 🌟 Overview
 
@@ -21,7 +21,8 @@ StudyShield is a revolutionary Progressive Web Application (PWA) that combines c
 
 ### 🎯 Key Features
 
-- **🤖 Dual AI Modes**: Online (Gemini 2.5 Flash Lite) and Offline (Gemini Nano)
+- **🚀 Gemini Nano - On-Device AI**: Revolutionary offline AI processing directly in your browser - no internet required! Experience blazing-fast responses with complete privacy as your data never leaves your device
+- **🤖 Dual AI Modes**: Seamlessly switch between Online (Gemini 2.5 Flash Lite) and Offline (Gemini Nano) for uninterrupted learning anywhere
 - **🛡️ Content Filtering**: Advanced AI-powered safe content detection
 - **🎯 Distraction Blocking**: Focus mode to eliminate study interruptions
 - **💬 Intelligent Chat**: AI-powered study assistant with streaming responses
@@ -137,8 +138,8 @@ Experience the full power of StudyShield with our live demo. No installation req
 - **Row Level Security (RLS)** - Data protection
 
 ### AI & Machine Learning
-- **Google Gemini 2.5 Flash Lite** - Online AI processing
-- **Google Gemini Nano** - On-device AI processing
+- **🌟 Google Gemini Nano** - Revolutionary on-device AI processing for offline learning with complete privacy
+- **Google Gemini 2.5 Flash Lite** - Online AI processing for enhanced capabilities
 - **Web Speech API** - Voice recognition
 - **Content Filtering AI** - Safe content detection
 
@@ -176,6 +177,7 @@ StudyShield/
 ### Key Components
 
 #### AI Service Architecture
+- **🌟 Gemini Nano Integration**: Cutting-edge on-device AI that runs entirely in your browser - no server required, complete privacy, instant responses
 - **Dual Mode Support**: Seamless switching between online and offline AI
 - **Fallback System**: Automatic failover between AI modes
 - **Streaming Responses**: Real-time AI response streaming
@@ -315,11 +317,12 @@ VITE_GOOGLE_AI_API_KEY=your_google_ai_key
 - [ ] **PWA Installation**: Install as native app
 
 #### ✅ AI Features
+- [ ] **🌟 Offline Mode with Gemini Nano**: Test revolutionary on-device AI - works without internet!
 - [ ] **Online Mode**: Test Gemini 2.5 Flash Lite responses
-- [ ] **Offline Mode**: Test Gemini Nano (if available)
 - [ ] **Streaming**: Observe real-time response streaming
 - [ ] **Content Filtering**: Test safe content detection
 - [ ] **Context Awareness**: Verify conversation memory
+- [ ] **Privacy**: Verify that Gemini Nano processes data locally without sending to servers
 
 #### ✅ User Experience
 - [ ] **Responsive Design**: Test on mobile/tablet/desktop
@@ -436,8 +439,8 @@ Test on multiple browsers:
    - Enable Gemini API access
 
 2. **Configure Models**
+   - **Gemini Nano for offline mode** - Enable on-device AI in Chrome (chrome://flags/#optimization-guide-on-device-model)
    - Gemini 2.5 Flash Lite for online mode
-   - Gemini Nano for offline mode (if available)
 
 ## 📚 API Documentation
 
