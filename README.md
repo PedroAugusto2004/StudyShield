@@ -11,7 +11,7 @@
 
 ## 🎥 Video Presentation
 
-[![StudyShield Demo](https://img.youtube.com/vi/YTu14V1s3Vc/maxresdefault.jpg)](https://youtu.be/YTu14V1s3Vc?si=b1ylBmFhfbxt7FDg)
+[![StudyShield Demo](./public/studyshield-cover.png)](https://youtu.be/YTu14V1s3Vc?si=b1ylBmFhfbxt7FDg)
 
 **[📺 Watch the Full Presentation on YouTube](https://youtu.be/YTu14V1s3Vc?si=b1ylBmFhfbxt7FDg)**
 
