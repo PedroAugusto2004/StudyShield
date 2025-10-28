@@ -11,7 +11,7 @@
 
 ## 🎥 Video Presentation
 
-[![StudyShield Demo](./public/studyshield-cover.png)](https://youtu.be/YTu14V1s3Vc?si=b1ylBmFhfbxt7FDg)
+[![StudyShield Demo](public/studyshield-cover.png)](https://youtu.be/YTu14V1s3Vc?si=b1ylBmFhfbxt7FDg)
 
 **[📺 Watch the Full Presentation on YouTube](https://youtu.be/YTu14V1s3Vc?si=b1ylBmFhfbxt7FDg)**
 
@@ -104,20 +104,20 @@ Experience the full power of StudyShield with our live demo. No installation req
 
 ### Landing Page
 <div align="center">
-  <img src="./public/landing-laptop.png" alt="Landing Page on Laptop" height="400" />
-  <img src="./public/landing-phone.png" alt="Landing Page on Phone" height="400" />
+  <img src="public/landing-laptop.png" alt="Landing Page on Laptop" height="400" />
+  <img src="public/landing-phone.png" alt="Landing Page on Phone" height="400" />
 </div>
 
 ### AI Chat Interface
 <div align="center">
-  <img src="./public/studyshield-laptop.png" alt="StudyShield on Laptop" height="400" />
-  <img src="./public/studyshield-phone.png" alt="StudyShield on Phone" height="400" />
+  <img src="public/studyshield-laptop.png" alt="StudyShield on Laptop" height="400" />
+  <img src="public/studyshield-phone.png" alt="StudyShield on Phone" height="400" />
 </div>
 
 ### Settings & Personalization
 <div align="center">
-  <img src="./public/personalization-laptop.png" alt="Settings on Laptop" height="400" />
-  <img src="./public/personalization-phone.png" alt="Settings on Phone" height="400" />
+  <img src="public/personalization-laptop.png" alt="Settings on Laptop" height="400" />
+  <img src="public/personalization-phone.png" alt="Settings on Phone" height="400" />
 </div>
 
 ## 🛠️ Technology Stack
