@@ -12,7 +12,7 @@ const HelpCenter = () => {
   
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Header */}
       <motion.header 
         initial={{ opacity: 0, y: -20 }}
