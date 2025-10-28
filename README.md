@@ -11,7 +11,7 @@
 
 ## 🎥 Video Presentation
 
-[![StudyShield Demo](https://raw.githubusercontent.com/PedroAugusto2004/studyshield/main/public/studyshield-cover.png)](https://youtu.be/YTu14V1s3Vc?si=b1ylBmFhfbxt7FDg)
+[![StudyShield Demo](https://raw.githubusercontent.com/PedroAugusto2004/studyshield/main/public/studyshield-cover.png?v=2)](https://youtu.be/YTu14V1s3Vc?si=b1ylBmFhfbxt7FDg)
 
 **[📺 Watch the Full Presentation on YouTube](https://youtu.be/YTu14V1s3Vc?si=b1ylBmFhfbxt7FDg)**
 
@@ -104,19 +104,19 @@ Experience the full power of StudyShield with our live demo. No installation req
 
 ### Landing Page
 <div align="center">
-  <img src="https://raw.githubusercontent.com/PedroAugusto2004/studyshield/main/public/landing-laptop.png" alt="Landing Page on Laptop" height="400" />
-  <img src="https://raw.githubusercontent.com/PedroAugusto2004/studyshield/main/public/landing-phone.png" alt="Landing Page on Phone" height="400" />
+  <img src="https://raw.githubusercontent.com/PedroAugusto2004/studyshield/main/public/landing-laptop.png?v=2" alt="Landing Page on Laptop" height="400" />
+  <img src="https://raw.githubusercontent.com/PedroAugusto2004/studyshield/main/public/landing-phone.png?v=2" alt="Landing Page on Phone" height="400" />
 </div>
 
 ### AI Chat Interface
 <p align="center">
-  <img src="https://raw.githubusercontent.com/PedroAugusto2004/studyshield/main/public/studyshield-laptop.png" alt="StudyShield on Laptop" height="400" /> <img src="https://raw.githubusercontent.com/PedroAugusto2004/studyshield/main/public/studyshield-phone.png" alt="StudyShield on Phone" height="400" />
+  <img src="https://raw.githubusercontent.com/PedroAugusto2004/studyshield/main/public/studyshield-laptop.png?v=2" alt="StudyShield on Laptop" height="400" /> <img src="https://raw.githubusercontent.com/PedroAugusto2004/studyshield/main/public/studyshield-phone.png?v=2" alt="StudyShield on Phone" height="400" />
 </p>
 
 ### Settings & Personalization
 <div align="center">
-  <img src="https://raw.githubusercontent.com/PedroAugusto2004/studyshield/main/public/personalization-laptop.png" alt="Settings on Laptop" height="400" />
-  <img src="https://raw.githubusercontent.com/PedroAugusto2004/studyshield/main/public/personalization-phone.png" alt="Settings on Phone" height="400" />
+  <img src="https://raw.githubusercontent.com/PedroAugusto2004/studyshield/main/public/personalization-laptop.png?v=2" alt="Settings on Laptop" height="400" />
+  <img src="https://raw.githubusercontent.com/PedroAugusto2004/studyshield/main/public/personalization-phone.png?v=2" alt="Settings on Phone" height="400" />
 </div>
 
 ## 🛠️ Technology Stack
