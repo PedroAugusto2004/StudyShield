@@ -12,12 +12,10 @@
 ## 🎥 Video Presentation
 
 <div align="center">
-  <a href="https://youtu.be/YTu14V1s3Vc?si=b1ylBmFhfbxt7FDg">
-    <img src="https://img.youtube.com/vi/YTu14V1s3Vc/maxresdefault.jpg" alt="Watch the Demo" style="width:100%;max-width:800px;">
-  </a>
+  <iframe width="800" height="450" src="https://www.youtube.com/embed/YTu14V1s3Vc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-**[📺 Click to Watch the Full Presentation on YouTube](https://youtu.be/YTu14V1s3Vc?si=b1ylBmFhfbxt7FDg)**
+**[📺 Watch the Full Presentation on YouTube](https://youtu.be/YTu14V1s3Vc?si=b1ylBmFhfbxt7FDg)**
 
 ## 🌟 Overview
 
