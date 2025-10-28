@@ -11,7 +11,11 @@
 
 ## 🎥 Video Presentation
 
-[![Watch the Demo](https://img.youtube.com/vi/YTu14V1s3Vc/maxresdefault.jpg)](https://youtu.be/YTu14V1s3Vc?si=b1ylBmFhfbxt7FDg)
+<div align="center">
+  <a href="https://youtu.be/YTu14V1s3Vc?si=b1ylBmFhfbxt7FDg">
+    <img src="https://img.youtube.com/vi/YTu14V1s3Vc/maxresdefault.jpg" alt="Watch the Demo" style="width:100%;max-width:800px;">
+  </a>
+</div>
 
 **[📺 Click to Watch the Full Presentation on YouTube](https://youtu.be/YTu14V1s3Vc?si=b1ylBmFhfbxt7FDg)**
 
