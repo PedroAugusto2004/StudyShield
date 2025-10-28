@@ -114,7 +114,7 @@ Experience the full power of StudyShield with our live demo. No installation req
 
 ### AI Chat Interface
 <div align="center">
-  <img src="https://raw.githubusercontent.com/PedroAugusto2004/studyshield/main/public/studyshield-laptop.png?v=2" alt="StudyShield on Laptop" height="400" /> <img src="https://raw.githubusercontent.com/PedroAugusto2004/studyshield/main/public/studyshield-phone.png?v=3" alt="StudyShield on Phone" height="380" />
+  <img src="https://raw.githubusercontent.com/PedroAugusto2004/studyshield/main/public/studyshield-laptop.png?v=2" alt="StudyShield on Laptop" height="380" /> <img src="https://raw.githubusercontent.com/PedroAugusto2004/studyshield/main/public/studyshield-phone.png?v=3" alt="StudyShield on Phone" height="380" />
 </div>
 
 ### Settings & Personalization
