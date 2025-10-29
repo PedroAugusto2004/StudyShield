@@ -238,9 +238,9 @@ const Landing = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="relative group"
+                className="relative"
               >
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-2xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-2xl blur-2xl opacity-30"></div>
                 <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-gray-900">
                   <iframe
                     width="100%"
