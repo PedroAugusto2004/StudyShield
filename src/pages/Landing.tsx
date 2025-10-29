@@ -240,20 +240,18 @@ const Landing = () => {
                 viewport={{ once: true }}
                 className="relative group"
               >
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
-                <div className="relative bg-white p-3 rounded-3xl shadow-2xl">
-                  <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-gray-900">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src="https://www.youtube.com/embed/YTu14V1s3Vc"
-                      title="StudyShield Presentation"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-full"
-                    />
-                  </div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-2xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+                <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-gray-900">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/YTu14V1s3Vc"
+                    title="StudyShield Presentation"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  />
                 </div>
               </motion.div>
             </div>
