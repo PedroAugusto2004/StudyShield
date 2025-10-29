@@ -210,10 +210,54 @@ const Landing = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
             </motion.div>
-
-
           </div>
 
+          {/* Video Section */}
+          <motion.div
+            variants={itemVariants}
+            className="mt-64 md:mt-80"
+          >
+            <div className="relative max-w-6xl mx-auto px-4">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-center mb-12"
+              >
+                <h2 className="text-4xl md:text-6xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-6 pb-2">
+                  {t('see.studyshield.in.action')}
+                </h2>
+                <p className="text-xl md:text-2xl font-normal text-gray-600 mb-4">
+                  {t('watch.presentation')}
+                </p>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="relative group"
+              >
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+                <div className="relative bg-white p-3 rounded-3xl shadow-2xl">
+                  <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-gray-900">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src="https://www.youtube.com/embed/YTu14V1s3Vc"
+                      title="StudyShield Presentation"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
         </motion.div>
       </main>
 

@@ -10,6 +10,8 @@
   "pwa.install.button": "설치",
   "pwa.install.later": "나중에",
   "get.started": "시작하기",
+  "see.studyshield.in.action": "StudyShield 실제 모습 보기",
+  "watch.presentation": "StudyShield가 학습 경험을 어떻게 변화시키는지 알아보기 위해 전체 프레젠테이션을 시청하세요",
   "alternative.download.helper": "대안: 다운로드 도우미 사용",
   "alternative.download.helper.description": "콘솔 방법이 작동하지 않으면 간단한 HTML 도구를 사용하여 Gemini Nano 다운로드를 자동으로 트리거하세요.",
   "view.github.repository": "GitHub 리포지토리 보기",
