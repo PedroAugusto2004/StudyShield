@@ -261,7 +261,7 @@
   "start.chatting": "开始聊天",
   "start.chatting.description": "提问、上传文档或请求摘要。AI会适应您的学习风格并提供个性化回答。",
   "customize.experience": "自定义您的体验",
-  "customize.experience.description": "在设置中设定您的学习目标，启用专注模式并个性化您的学习环境。",
+  "customize.experience.description": "在设置中设定您的学习目标，启用Gemini Nano并个性化您的学习。",
   "pro.tip.safe.filtering": "专业提示：启用安全内容过滤",
   "pro.tip.description": "StudyShield使用AI自动过滤有害内容。为了获得最大保护，启用Gemini Nano进行实时设备端内容过滤，即使离线也能工作。",
   "how.to.enable.gemini.nano": "如何启用Gemini Nano",

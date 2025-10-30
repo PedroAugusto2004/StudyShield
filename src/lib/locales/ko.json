@@ -275,7 +275,7 @@
   "start.chatting": "채팅 시작",
   "start.chatting.description": "질문을 하고, 문서를 업로드하거나 요약을 요청하세요. AI가 귀하의 학습 스타일에 적응하여 개인화된 답변을 제공합니다.",
   "customize.experience": "경험 맞춤화",
-  "customize.experience.description": "설정에서 학습 목표를 설정하고, 포커스 모드를 활성화하며, 학습 환경을 개인화하세요.",
+  "customize.experience.description": "설정에서 학습 목표를 설정하고, Gemini Nano를 활성화하며, 학습을 개인화하세요.",
   "pro.tip.safe.filtering": "프로 팁: 안전한 콘텐츠 필터링 활성화",
   "pro.tip.description": "StudyShield는 AI를 사용하여 유해한 콘텐츠를 자동으로 필터링합니다. 최대 보호를 위해 오프라인에서도 작동하는 기기 내 실시간 콘텐츠 필터링을 위한 Gemini Nano를 활성화하세요.",
   "how.to.enable.gemini.nano": "Gemini Nano 활성화 방법",

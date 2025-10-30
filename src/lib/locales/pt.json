@@ -261,7 +261,7 @@
   "start.chatting": "Comece a Conversar",
   "start.chatting.description": "Faça perguntas, envie documentos ou solicite resumos. A IA se adapta ao seu estilo de aprendizado e fornece respostas personalizadas.",
   "customize.experience": "Personalize Sua Experiência",
-  "customize.experience.description": "Defina seus objetivos de aprendizado, ative o modo foco e personalize seu ambiente de estudo nas Configurações.",
+  "customize.experience.description": "Defina seus objetivos de aprendizado, ative o Gemini Nano e personalize seu estudo nas Configurações.",
   "pro.tip.safe.filtering": "Dica Pro: Ative a Filtragem de Conteúdo Seguro",
   "pro.tip.description": "O StudyShield filtra automaticamente conteúdo prejudicial usando IA. Para máxima proteção, ative o Gemini Nano para filtragem de conteúdo em tempo real no dispositivo que funciona mesmo offline.",
   "how.to.enable.gemini.nano": "Como Habilitar o Gemini Nano",
