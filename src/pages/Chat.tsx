@@ -1168,12 +1168,45 @@ const Chat = () => {
     setMessages([greetingMessage]);
     setChatHistory([]);
     setCurrentConversationId(null);
+    setSidebarCollapsed(true);
   };
 
   const handleDeleteConversation = (id: string) => {
     deleteConversation(id);
-    handleNewConversation();
-    // Keep sidebar open after deletion
+    setIsChatMode(false);
+    
+    const userName = localStorage.getItem('userName') || user?.user_metadata?.name || user?.email?.split('@')[0] || 'User';
+    const hour = new Date().getHours();
+    const greetings = [
+      t('good.to.see.again'),
+      t('welcome.back.user'),
+      t('ready.to.learn'),
+      t('continue.studying')
+    ];
+    
+    let greeting;
+    if (hour < 12) greeting = t('good.morning');
+    else if (hour < 17) greeting = t('good.afternoon');
+    else if (hour < 21) greeting = t('good.evening');
+    else {
+      const sessionCount = parseInt(localStorage.getItem('sessionCount') || '0');
+      if (sessionCount > 0) {
+        greeting = greetings[sessionCount % greetings.length];
+      } else {
+        greeting = t('good.night');
+      }
+    }
+    
+    const greetingMessage = {
+      id: Date.now(),
+      type: 'greeting' as const,
+      content: `${greeting}, ${userName}!`,
+      timestamp: new Date()
+    };
+    setMessages([greetingMessage]);
+    setChatHistory([]);
+    setCurrentConversationId(null);
+    // Sidebar stays open after deletion
   };
 
   const handleShareConversation = async (id: string) => {
