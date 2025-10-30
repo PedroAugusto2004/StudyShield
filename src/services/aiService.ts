@@ -364,6 +364,7 @@ export class AIService {
         if (abortSignal?.aborted) {
           throw new Error('Request was aborted');
         }
+        // Instant chunk delivery
         onChunk(chunk);
       },
       context

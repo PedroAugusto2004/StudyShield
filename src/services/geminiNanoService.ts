@@ -49,25 +49,14 @@ export class GeminiNanoService {
       const userName = localStorage.getItem('userName');
       const userGoals = localStorage.getItem('userGoals');
       
-      // Build personalized system prompt
-      let systemPrompt = 'StudyShield AI: Clear, concise educational help.';
-      
-      if (userName || userGoals) {
-        systemPrompt = 'You are StudyShield AI, an educational assistant.';
-        if (userName) {
-          systemPrompt += ` The user's name is ${userName}.`;
-        }
-        if (userGoals) {
-          systemPrompt += ` Their learning goals: ${userGoals}.`;
-        }
-        systemPrompt += ' Provide personalized, clear, and concise educational help.';
-      }
+      // Ultra-minimal prompt for maximum speed
+      const systemPrompt = 'Brief, fast responses.';
 
-      // Create session with optimized parameters
+      // Create session with maximum speed parameters
       this.session = await LanguageModel.create({
         systemPrompt,
-        temperature: 0.7,
-        topK: 20
+        temperature: 0.3,
+        topK: 5
       });
       
       if (!this.session) {
@@ -94,7 +83,10 @@ export class GeminiNanoService {
     }
 
     try {
-      const enhancedMessage = context ? `${message}\n\n${context}` : message;
+      // Add brevity instruction for faster generation
+      const enhancedMessage = context 
+        ? `${message}\n\n${context}\n\nBe brief.` 
+        : `${message}\n\nBe brief.`;
       const cacheKey = enhancedMessage.toLowerCase().trim();
       
       // Check cache
@@ -137,7 +129,10 @@ export class GeminiNanoService {
     }
 
     try {
-      const enhancedMessage = context ? `${message}\n\n${context}` : message;
+      // Add brevity instruction for faster generation
+      const enhancedMessage = context 
+        ? `${message}\n\n${context}\n\nBe brief.` 
+        : `${message}\n\nBe brief.`;
       const cacheKey = enhancedMessage.toLowerCase().trim();
       
       // Check cache - stream cached response
@@ -147,7 +142,7 @@ export class GeminiNanoService {
         return cached;
       }
 
-      // Use native streaming if available
+      // Use native streaming if available - instant delivery
       if (this.session.promptStreaming) {
         const stream = this.session.promptStreaming(enhancedMessage);
         const reader = stream.getReader();
@@ -157,8 +152,9 @@ export class GeminiNanoService {
           const { done, value } = await reader.read();
           if (done) break;
           
-          onChunk(value);
+          // Immediate chunk delivery
           fullResponse += value;
+          onChunk(value);
         }
 
         this.updateCache(cacheKey, fullResponse);
@@ -182,10 +178,10 @@ export class GeminiNanoService {
   }
 
   private async streamText(text: string, onChunk: (chunk: string) => void): Promise<void> {
-    const words = text.split(' ');
-    for (let i = 0; i < words.length; i++) {
-      onChunk(i === 0 ? words[i] : ' ' + words[i]);
-      await new Promise(resolve => setTimeout(resolve, 30));
+    // Instant streaming - no delays
+    const chunkSize = 5;
+    for (let i = 0; i < text.length; i += chunkSize) {
+      onChunk(text.slice(i, i + chunkSize));
     }
   }
 
