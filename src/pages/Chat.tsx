@@ -1135,10 +1135,8 @@ const Chat = () => {
   };
 
   const handleNewConversation = () => {
-    // Reset to greeting mode
     setIsChatMode(false);
     
-    // Generate greeting with current translations
     const userName = localStorage.getItem('userName') || user?.user_metadata?.name || user?.email?.split('@')[0] || 'User';
     const hour = new Date().getHours();
     const greetings = [
@@ -1170,13 +1168,12 @@ const Chat = () => {
     setMessages([greetingMessage]);
     setChatHistory([]);
     setCurrentConversationId(null);
-    setSidebarCollapsed(true);
   };
 
   const handleDeleteConversation = (id: string) => {
     deleteConversation(id);
-    // Redirect to new chat after deletion
     handleNewConversation();
+    // Keep sidebar open after deletion
   };
 
   const handleShareConversation = async (id: string) => {
@@ -1458,21 +1455,16 @@ const Chat = () => {
                               {message.files.map((file, idx) => (
                                 <div key={idx}>
                                   {file.type.startsWith('image/') ? (
-                                    <div className="bg-blue-600/20 p-2 rounded">
-                                      <div className="text-xs text-blue-100 mb-1">
-                                        🖼️ {file.name.length > 15 ? file.name.substring(0, 15) + '...' : file.name}
-                                      </div>
-                                      <img 
-                                        src={message.fileContents?.[idx]?.content} 
-                                        alt={file.name}
-                                        className="w-20 h-20 object-cover rounded border border-blue-400/30 cursor-pointer"
-                                        onClick={() => setViewingFile({
-                                          content: message.fileContents?.[idx]?.content || '',
-                                          name: file.name,
-                                          type: file.type
-                                        })}
-                                      />
-                                    </div>
+                                    <img 
+                                      src={message.fileContents?.[idx]?.content} 
+                                      alt={file.name}
+                                      className="w-20 h-20 object-cover rounded cursor-pointer"
+                                      onClick={() => setViewingFile({
+                                        content: message.fileContents?.[idx]?.content || '',
+                                        name: file.name,
+                                        type: file.type
+                                      })}
+                                    />
                                   ) : (
                                     <div 
                                       className="text-xs text-blue-100 bg-blue-600/20 px-2 py-1 rounded cursor-pointer hover:bg-blue-600/30"
@@ -1624,9 +1616,7 @@ const Chat = () => {
             {attachedFiles.length > 0 && (
               <div className="flex flex-wrap gap-2 mt-2">
                 {attachedFiles.map((file, index) => (
-                  <div key={index} className={`relative group ${
-                    isDark ? 'bg-gray-700' : 'bg-gray-200'
-                  } rounded-lg p-2`}>
+                  <div key={index} className="relative group">
                     {file.type.startsWith('image/') ? (
                       <div className="relative">
                         <img 
@@ -1647,10 +1637,11 @@ const Chat = () => {
                         >
                           ×
                         </button>
-                        <div className="text-xs mt-1 truncate w-16">{file.name}</div>
                       </div>
                     ) : (
-                      <div className="flex items-center gap-2">
+                      <div className={`flex items-center gap-2 ${
+                        isDark ? 'bg-gray-700' : 'bg-gray-200'
+                      } rounded-lg p-2`}>
                         <div className={`px-2 py-1 rounded text-xs ${
                           isDark ? 'text-gray-300' : 'text-gray-700'
                         }`}>
@@ -1779,7 +1770,14 @@ const Chat = () => {
                     </Button>
                     
                     <button
-                      onClick={isGenerating ? handleStopGeneration : handleSendMessage}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        if (isGenerating) {
+                          handleStopGeneration();
+                        } else {
+                          handleSendMessage();
+                        }
+                      }}
                       disabled={(!inputValue.trim() && attachedFiles.length === 0) && !isGenerating}
                       className={`flex-shrink-0 h-8 w-8 rounded-full focus:outline-none items-center justify-center flex smooth-transition ${
                         isGenerating
@@ -1789,6 +1787,7 @@ const Chat = () => {
                             : isDark ? 'bg-white text-black' : 'bg-black text-white'
                       }`}
                       style={{ WebkitTapHighlightColor: 'transparent', outline: 'none', border: 'none' }}
+                      type="button"
                     >
                       {isGenerating ? (
                         <div className={`w-3 h-3 ${isDark ? 'bg-black' : 'bg-white'} rounded-sm`} />
