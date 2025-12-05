@@ -394,7 +394,6 @@
   "pwa.install.description": "Installez StudyShield pour un accès plus rapide, des fonctionnalités hors ligne et une expérience d\\'application native.",
   "pwa.install.button": "Installer",
   "pwa.install.later": "Plus Tard",
-  "powered.by.google.ai.technology": "Propulsé par la technologie Google AI",
   "new.conversation": "Nouvelle Conversation",
   "user.default": "Utilisateur",
   "knowledge.base": "Base de Connaissances",
@@ -433,7 +432,6 @@
   "link.copied": "Lien Copié !",
   "copy.link": "Copier le Lien",
   "share.restriction": "Seuls les utilisateurs avec un compte StudyShield peuvent voir cette conversation",
-  "settings": "Paramètres",
   "password.required": "Le mot de passe est requis",
   "delete.account.warning": "Cette action supprimera définitivement votre compte et toutes les données associées. Cela ne peut pas être annulé.",
   "confirm.password.delete": "Confirmez votre mot de passe pour supprimer le compte",
@@ -464,5 +462,8 @@
   "study.shakespeare.question": "Quels sont les thèmes principaux dans Hamlet de Shakespeare?",
   "study.periodic.table.question": "Aidez-moi à mémoriser le tableau périodique",
   "study.schedule.question": "Créez un horaire d'étude efficace pour les examens",
-  "study.essay.question": "Donnez-moi des conseils pour écrire un essai solide"
+  "study.essay.question": "Donnez-moi des conseils pour écrire un essai solide",
+  "edit.message": "Modifier le message",
+  "save": "Enregistrer",
+  "copy": "Copier"
 }

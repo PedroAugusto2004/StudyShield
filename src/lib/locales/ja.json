@@ -393,7 +393,6 @@
   "pwa.install.description": "より速いアクセス、オフライン機能、ネイティブアプリ体験のためにStudyShieldをインストールします。",
   "pwa.install.button": "インストール",
   "pwa.install.later": "後で",
-  "powered.by.google.ai.technology": "Google AI 技術により提供",
   "new.conversation": "新しい会話",
   "user.default": "ユーザー",
   "knowledge.base": "ナレッジベース",
@@ -463,5 +462,8 @@
   "study.shakespeare.question": "シェイクスピアのハムレットの主なテーマは何ですか？",
   "study.periodic.table.question": "元素周期表を記憶するのを手伝ってください",
   "study.schedule.question": "試験のための効果的な学習スケジュールを作成してください",
-  "study.essay.question": "強力なエッセイを書くためのヒントをください"
+  "study.essay.question": "強力なエッセイを書くためのヒントをください",
+  "edit.message": "メッセージを編集",
+  "save": "保存",
+  "copy": "コピー"
 }

@@ -402,8 +402,6 @@
   "pwa.install.description": "Install StudyShield for faster access, offline features, and a native app experience.",
   "pwa.install.button": "Install",
   "pwa.install.later": "Later",
-  "powered.by.google.ai.technology": "Powered by Google AI Technology",
-  "new.conversation": "New Conversation",
   "user.default": "User",
   "knowledge.base": "Knowledge Base",
   "knowledge.base.subtitle": "Upload and manage your study materials",
@@ -464,5 +462,9 @@
   "study.shakespeare.question": "What are the main themes in Shakespeare's Hamlet?",
   "study.periodic.table.question": "Help me memorize the periodic table",
   "study.schedule.question": "Create an effective study schedule for exams",
-  "study.essay.question": "Give me tips for writing a strong essay"
+  "study.essay.question": "Give me tips for writing a strong essay",
+  "edit": "Edit",
+  "edit.message": "Edit message",
+  "save": "Save",
+  "copy": "Copy"
 }

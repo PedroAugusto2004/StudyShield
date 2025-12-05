@@ -393,7 +393,6 @@
   "pwa.install.description": "Instale o StudyShield para acesso mais rápido, recursos offline e uma experiência de aplicativo nativo.",
   "pwa.install.button": "Instalar",
   "pwa.install.later": "Mais Tarde",
-  "powered.by.google.ai.technology": "Desenvolvido com tecnologia Google AI",
   "new.conversation": "Nova Conversa",
   "user.default": "Usuário",
   "knowledge.base": "Base de Conhecimento",
@@ -463,5 +462,8 @@
   "study.shakespeare.question": "Quais são os temas principais em Hamlet de Shakespeare?",
   "study.periodic.table.question": "Ajude-me a memorizar a tabela periódica",
   "study.schedule.question": "Crie um cronograma de estudo eficaz para exames",
-  "study.essay.question": "Dê-me dicas para escrever um ensaio forte"
+  "study.essay.question": "Dê-me dicas para escrever um ensaio forte",
+  "edit.message": "Editar mensagem",
+  "save": "Salvar",
+  "copy": "Copiar"
 }

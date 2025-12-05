@@ -393,7 +393,6 @@
   "pwa.install.description": "安装StudyShield以获得更快的访问速度、离线功能和原生应用体验。",
   "pwa.install.button": "安装",
   "pwa.install.later": "稍后",
-  "powered.by.google.ai.technology": "由 Google AI 技术提供支持",
   "new.conversation": "新对话",
   "user.default": "用户",
   "knowledge.base": "知识库",
@@ -463,5 +462,8 @@
   "study.shakespeare.question": "莎士比亚《哈姆雷特》的主题是什么？",
   "study.periodic.table.question": "帮我记忆元素周期表",
   "study.schedule.question": "为考试制定有效的学习计划",
-  "study.essay.question": "给我写作强有力论文的技巧"
+  "study.essay.question": "给我写作强有力论文的技巧",
+  "edit.message": "编辑消息",
+  "save": "保存",
+  "copy": "复制"
 }

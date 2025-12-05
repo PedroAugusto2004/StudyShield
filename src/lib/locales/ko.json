@@ -383,17 +383,6 @@
   "childrens.privacy.text": "StudyShield는 모든 연령대의 사용자에게 안전하도록 설계되었습니다. 부모의 동의 없이 13세 미만 아동의 개인 정보를 고의로 수집하지 않습니다.",
   "contact.us": "문의하기",
   "contact.us.text": "이 개인정보 보호정책에 대해 질문이 있으면 다음으로 문의하십시오",
-  "cookies.title": "쿠키를 사용합니다",
-  "cookies.description": "쿠키를 사용하여 경험을 향상시키고, 사이트 사용을 분석하며, 콘텐츠를 개인화합니다. StudyShield를 계속 사용하면 쿠키 사용에 동의하는 것입니다.",
-  "cookies.accept": "모두 수락",
-  "cookies.decline": "거부",
-  "cookies.learn.more": "자세히 알아보기",
-  "pwa.install.title": "StudyShield 설치",
-  "pwa.install.subtitle": "앱 경험 얻기",
-  "pwa.install.description": "더 빠른 액세스, 오프라인 기능 및 네이티브 앱 경험을 위해 StudyShield를 설치하세요.",
-  "pwa.install.button": "설치",
-  "pwa.install.later": "나중에",
-  "powered.by.google.ai.technology": "Google AI 기술로 제공",
   "new.conversation": "새 대화",
   "user.default": "사용자",
   "knowledge.base": "지식 베이스",
@@ -463,5 +452,8 @@
   "study.shakespeare.question": "셰익스피어의 햄릿의 주요 주제는 무엇인가요?",
   "study.periodic.table.question": "주기율표를 암기하는 것을 도와주세요",
   "study.schedule.question": "시험을 위한 효과적인 학습 일정을 만들어주세요",
-  "study.essay.question": "강력한 에세이를 쓰기 위한 팁을 주세요"
+  "study.essay.question": "강력한 에세이를 쓰기 위한 팁을 주세요",
+  "edit.message": "메시지 수정",
+  "save": "저장",
+  "copy": "복사"
 }
